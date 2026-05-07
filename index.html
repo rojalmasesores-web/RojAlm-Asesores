@@ -121,6 +121,45 @@ header {
   font-size:20px;
   text-decoration:none;
 }
+  .benefits {
+  background:#111;
+  padding:70px 20px;
+  text-align:center;
+  color:white;
+}
+
+.benefits h2 {
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.benefits-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:25px;
+}
+
+.benefit-card {
+  background:#1b1b1b;
+  padding:30px 25px;
+  border-radius:20px;
+  transition:0.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.benefit-card:hover {
+  transform:translateY(-8px);
+}
+
+.benefit-card h3 {
+  margin-bottom:15px;
+  font-size:22px;
+}
+
+.benefit-card p {
+  opacity:0.85;
+  line-height:1.6;
+}
 </style>
 </head>
 
