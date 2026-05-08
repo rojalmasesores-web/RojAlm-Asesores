@@ -99,9 +99,9 @@ header img{
 
 .slides{
   display:flex;
-  width:400%;
+  width:800%;
 
-  animation:slide 40s infinite ease-in-out;
+  animation:slide 80s infinite ease-in-out;
 }
 
 .slide{
@@ -153,20 +153,36 @@ header img{
 
 @keyframes slide{
 
-  0%,20%{
+  0%,10%{
     transform:translateX(0%);
   }
 
-  25%,45%{
+  12%,22%{
+    transform:translateX(-12.5%);
+  }
+
+  24%,34%{
     transform:translateX(-25%);
   }
 
-  50%,70%{
+  36%,46%{
+    transform:translateX(-37.5%);
+  }
+
+  48%,58%{
     transform:translateX(-50%);
   }
 
-  75%,95%{
+  60%,70%{
+    transform:translateX(-62.5%);
+  }
+
+  72%,82%{
     transform:translateX(-75%);
+  }
+
+  84%,94%{
+    transform:translateX(-87.5%);
   }
 
   100%{
@@ -187,14 +203,6 @@ header img{
     transform:translateY(0);
   }
 
-}
-
-/* SECTION TITLE */
-
-.section-title{
-  text-align:center;
-  font-size:42px;
-  margin-bottom:20px;
 }
 
 /* GRID */
@@ -391,7 +399,6 @@ header img{
     font-size:18px;
   }
 
-  .section-title,
   .benefits h2,
   .catalogo h2{
     font-size:32px;
@@ -404,15 +411,11 @@ header img{
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
   <img src="Logo.jpeg">
 
 </header>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -536,6 +539,102 @@ header img{
 
     </div>
 
+    <!-- SLIDE 5 -->
+
+    <div class="slide">
+
+      <img src="depsta.png">
+
+      <div class="slide-text">
+
+        <h2>Departamentos Sta. Catarina</h2>
+
+        <p>Desde $5 MDP*</p>
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Santa%20Catarina"
+        target="_blank">
+
+        Solicitar información
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- SLIDE 6 -->
+
+    <div class="slide">
+
+      <img src="depsur.jpg">
+
+      <div class="slide-text">
+
+        <h2>Departamentos Sur Mty</h2>
+
+        <p>Desde $4 MDP*</p>
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Sur%20Monterrey"
+        target="_blank">
+
+        Solicitar información
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- SLIDE 7 -->
+
+    <div class="slide">
+
+      <img src="terrcar.png">
+
+      <div class="slide-text">
+
+        <h2>Terrenos Residenciales Carretera Nacional</h2>
+
+        <p>Desde $2.5 MDP*</p>
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Carretera%20Nacional"
+        target="_blank">
+
+        Solicitar información
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- SLIDE 8 -->
+
+    <div class="slide">
+
+      <img src="masroj.png">
+
+      <div class="slide-text">
+
+        <h2>Busco otra ubicación y/o presupuesto</h2>
+
+        <p>$*</p>
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20busco%20otra%20ubicación%20y/o%20presupuesto"
+        target="_blank">
+
+        Solicitar asesoría
+
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
@@ -625,6 +724,94 @@ header img{
       target="_blank">
 
       Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="depsta.png">
+
+    <div class="card-content">
+
+      <h3>Departamentos Sta. Catarina</h3>
+
+      <p>Desde $5 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Santa%20Catarina"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="depsur.jpg">
+
+    <div class="card-content">
+
+      <h3>Departamentos Sur Mty</h3>
+
+      <p>Desde $4 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Sur%20Monterrey"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="terrcar.png">
+
+    <div class="card-content">
+
+      <h3>Terrenos Residenciales Carretera Nacional</h3>
+
+      <p>Desde $2.5 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Carretera%20Nacional"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="masroj.png">
+
+    <div class="card-content">
+
+      <h3>Busco otra ubicación y/o presupuesto</h3>
+
+      <p>$*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20busco%20otra%20ubicación%20y/o%20presupuesto"
+      target="_blank">
+
+      Solicitar asesoría
 
       </a>
 
