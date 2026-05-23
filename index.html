@@ -1709,7 +1709,19 @@ Solicitar información
 }
 
 </style>
+function abrirImagen(src){
 
+  document.getElementById("imageModal").style.display = "flex";
+
+  document.getElementById("imagenGrande").src = src;
+
+}
+
+function cerrarImagen(){
+
+  document.getElementById("imageModal").style.display = "none";
+
+}
 <script>
 
 function abrirAviso(){
