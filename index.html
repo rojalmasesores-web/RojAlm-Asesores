@@ -895,5 +895,228 @@ target="_blank">
 
 </a>
 
+<!-- AVISO PRIVACIDAD -->
+
+<section style="
+background:#0f0f0f;
+padding:90px 20px;
+text-align:center;
+color:white;
+">
+
+  <h2 style="
+  font-size:42px;
+  margin-bottom:20px;
+  ">
+  Aviso de Privacidad
+  </h2>
+
+  <p style="
+  max-width:900px;
+  margin:auto;
+  line-height:1.9;
+  opacity:0.85;
+  font-size:18px;
+  ">
+  En RojAlm Asesores protegemos tu información personal y garantizamos
+  un tratamiento responsable, seguro y confidencial de tus datos.
+
+  Tus datos serán utilizados únicamente para brindarte asesoría inmobiliaria,
+  seguimiento de propiedades y atención comercial.
+  </p>
+
+  <button onclick="abrirAviso()" style="
+  margin-top:35px;
+  padding:18px 42px;
+  border:none;
+  border-radius:16px;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.35s;
+  box-shadow:0 12px 35px rgba(37,211,102,0.35);
+  ">
+
+    Leer Aviso Completo
+
+  </button>
+
+</section>
+
+<!-- MODAL -->
+
+<div id="modalAviso" style="
+display:none;
+position:fixed;
+z-index:99999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+overflow:auto;
+background:rgba(0,0,0,0.88);
+padding:30px 15px;
+">
+
+  <div style="
+  background:white;
+  max-width:950px;
+  margin:auto;
+  border-radius:28px;
+  padding:45px;
+  position:relative;
+  color:#222;
+  line-height:1.9;
+  animation:fadeModal 0.35s ease;
+  ">
+
+    <span onclick="cerrarAviso()" style="
+    position:absolute;
+    top:18px;
+    right:25px;
+    font-size:40px;
+    cursor:pointer;
+    color:#666;
+    ">
+    &times;
+    </span>
+
+    <h2 style="
+    font-size:40px;
+    margin-bottom:10px;
+    ">
+    Aviso de Privacidad
+    </h2>
+
+    <h3 style="
+    margin-bottom:30px;
+    color:#128C7E;
+    ">
+    RojAlm Asesores
+    </h3>
+
+    <p>
+    En cumplimiento con la Ley Federal de Protección de Datos Personales
+    en Posesión de los Particulares, RojAlm Asesores pone a su disposición
+    el presente Aviso de Privacidad.
+    </p>
+
+    <h3>Datos personales que se recaban</h3>
+
+    <ul style="padding-left:22px;">
+
+      <li>Nombre completo</li>
+      <li>Número telefónico</li>
+      <li>Correo electrónico</li>
+      <li>Domicilio</li>
+      <li>Información financiera o crediticia</li>
+      <li>Datos relacionados con compra, venta o renta de inmuebles</li>
+
+    </ul>
+
+    <h3 style="margin-top:28px;">
+    Finalidad del uso de los datos
+    </h3>
+
+    <ul style="padding-left:22px;">
+
+      <li>Brindar asesoría inmobiliaria</li>
+      <li>Dar seguimiento a solicitudes</li>
+      <li>Promover propiedades y servicios</li>
+      <li>Elaborar contratos y expedientes</li>
+
+    </ul>
+
+    <h3 style="margin-top:28px;">
+    Protección de la información
+    </h3>
+
+    <p>
+    RojAlm Asesores implementa medidas de seguridad administrativas,
+    técnicas y físicas para proteger sus datos personales.
+    </p>
+
+    <h3 style="margin-top:28px;">
+    Derechos ARCO
+    </h3>
+
+    <p>
+    Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento
+    de sus datos personales.
+    </p>
+
+    <h3 style="margin-top:28px;">
+    Contacto
+    </h3>
+
+    <p>
+    <strong>RojAlm Asesores</strong><br><br>
+
+    📱 WhatsApp: 8116027856
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+
+function abrirAviso(){
+  document.getElementById("modalAviso").style.display="block";
+}
+
+function cerrarAviso(){
+  document.getElementById("modalAviso").style.display="none";
+}
+
+window.onclick = function(event){
+
+  let modal = document.getElementById("modalAviso");
+
+  if(event.target == modal){
+    modal.style.display = "none";
+  }
+
+}
+
+</script>
+
+<style>
+
+@keyframes fadeModal{
+
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@media(max-width:768px){
+
+  #modalAviso div{
+    padding:28px 22px !important;
+  }
+
+  #modalAviso h2{
+    font-size:30px !important;
+  }
+
+  #modalAviso p,
+  #modalAviso li{
+    font-size:16px !important;
+  }
+
+}
+
+</style>
+
 </body>
 </html>
