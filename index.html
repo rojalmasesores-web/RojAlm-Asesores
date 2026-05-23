@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>RojAlm Asesores</title>
 
 <style>
-
-/* RESET */
 
 *{
   margin:0;
@@ -32,27 +29,26 @@ body{
 
 header{
   position:fixed;
+  width:100%;
   top:0;
   left:0;
-  width:100%;
-  z-index:9999;
+  z-index:1000;
 
-  background:rgba(0,0,0,.82);
-  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(10px);
 
-  padding:14px 20px;
+  padding:15px;
   text-align:center;
 }
 
 header img{
-  width:135px;
-  max-width:100%;
+  width:140px;
 }
 
 /* HERO */
 
 .hero{
-  background:linear-gradient(to right,#000,#1c1c1c);
+  background:linear-gradient(to right,#000,#1a1a1a);
   color:white;
   text-align:center;
 
@@ -61,39 +57,36 @@ header img{
 
 .hero h1{
   font-size:54px;
-  line-height:1.1;
   margin-bottom:20px;
+  line-height:1.1;
 }
 
 .hero p{
   font-size:22px;
-  opacity:.85;
-  max-width:800px;
-  margin:auto;
+  opacity:0.85;
 }
 
-/* BOTONES */
+/* BUTTON */
 
 .btn{
   display:inline-block;
-
-  margin-top:28px;
+  margin-top:30px;
   padding:16px 34px;
 
   background:#25D366;
   color:white;
 
   text-decoration:none;
+  border-radius:12px;
+
   font-weight:bold;
-
-  border-radius:14px;
-
-  transition:.35s ease;
+  transition:0.35s;
 }
 
 .btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 28px rgba(37,211,102,.35);
+  transform:translateY(-3px) scale(1.03);
+
+  box-shadow:0 12px 30px rgba(37,211,102,0.45);
 }
 
 /* CARRUSEL */
@@ -107,6 +100,7 @@ header img{
 .slides{
   display:flex;
   width:800%;
+
   animation:slide 80s infinite ease-in-out;
 }
 
@@ -118,8 +112,14 @@ header img{
 .slide img{
   width:100%;
   height:650px;
+
   object-fit:cover;
-  filter:brightness(.65);
+
+  filter:brightness(0.68);
+
+  transform:scale(1.05);
+
+  transition:8s ease;
 }
 
 .slide-text{
@@ -128,19 +128,21 @@ header img{
   left:50px;
   bottom:50px;
 
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,0.12);
+
   backdrop-filter:blur(10px);
 
   color:white;
 
   padding:30px;
-  border-radius:24px;
 
-  max-width:520px;
+  border-radius:25px;
+
+  animation:fadeUp 1.8s ease;
 }
 
 .slide-text h2{
-  font-size:42px;
+  font-size:44px;
   margin-bottom:10px;
 }
 
@@ -189,6 +191,20 @@ header img{
 
 }
 
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(50px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
 /* GRID */
 
 .grid{
@@ -204,12 +220,14 @@ header img{
 
 .card{
   background:white;
+
   border-radius:24px;
+
   overflow:hidden;
 
-  box-shadow:0 10px 35px rgba(0,0,0,.12);
+  box-shadow:0 12px 35px rgba(0,0,0,0.12);
 
-  transition:.35s;
+  transition:0.35s;
 }
 
 .card:hover{
@@ -237,11 +255,13 @@ header img{
   font-weight:bold;
 }
 
-/* BENEFICIOS */
+/* BENEFITS */
 
 .benefits{
   background:#111;
+
   color:white;
+
   text-align:center;
 
   padding:100px 25px;
@@ -262,7 +282,8 @@ header img{
 }
 
 .benefit-card{
-  background:rgba(255,255,255,.06);
+
+  background:rgba(255,255,255,0.06);
 
   backdrop-filter:blur(8px);
 
@@ -270,7 +291,9 @@ header img{
 
   border-radius:24px;
 
-  transition:.35s;
+  transition:0.35s;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .benefit-card:hover{
@@ -284,9 +307,8 @@ header img{
 
 .benefit-card p{
   line-height:1.8;
-  opacity:.85;
+  opacity:0.85;
 }
-
 /* PRESENTACIÓN */
 
 .about-section{
@@ -297,16 +319,11 @@ header img{
 .about-card{
   max-width:900px;
   margin:auto;
-
   background:white;
-
   border-radius:28px;
-
   padding:60px 40px;
-
   text-align:center;
-
-  box-shadow:0 10px 40px rgba(0,0,0,.12);
+  box-shadow:0 10px 40px rgba(0,0,0,0.12);
 }
 
 .about-card h2{
@@ -322,20 +339,14 @@ header img{
 
 .about-btn{
   margin-top:35px;
-
   padding:16px 34px;
-
   border:none;
   border-radius:14px;
-
   background:#111;
   color:white;
-
   font-size:17px;
   font-weight:bold;
-
   cursor:pointer;
-
   transition:.35s;
 }
 
@@ -343,86 +354,56 @@ header img{
   transform:translateY(-4px);
 }
 
-/* MODAL */
-
-.about-modal,
-.privacy-modal{
+.about-modal{
   display:none;
-
   position:fixed;
   z-index:99999;
-
   left:0;
   top:0;
-
   width:100%;
   height:100%;
-
   overflow:auto;
-
   background:rgba(0,0,0,.82);
-
   padding:20px;
 }
 
-.about-content,
-.privacy-content{
-  background:white;
+.about-content{
+  background:#fff;
   color:#111;
-
   max-width:950px;
-
   margin:40px auto;
-
   border-radius:28px;
-
   padding:45px;
-
   position:relative;
+  animation:fadeUp .4s ease;
 }
 
-.about-content h2,
-.privacy-content h2{
-  font-size:38px;
-  margin-bottom:15px;
+.about-content h2{
+  font-size:40px;
+  margin-bottom:30px;
 }
 
-.about-content h3,
-.privacy-content h3{
-  margin-top:25px;
+.about-content h3{
+  margin-top:30px;
   margin-bottom:12px;
-  font-size:26px;
-}
-
-.about-content h4,
-.privacy-content h4{
-  margin-top:28px;
-  margin-bottom:12px;
-  font-size:22px;
+  font-size:28px;
 }
 
 .about-content p,
-.about-content li,
-.privacy-content p,
-.privacy-content li{
+.about-content li{
   line-height:1.9;
   font-size:18px;
 }
 
-.about-content ul,
-.privacy-content ul{
+.about-content ul{
   padding-left:20px;
 }
 
-.close-about,
-.close-modal{
+.close-about{
   position:absolute;
-
   top:18px;
   right:22px;
-
   font-size:30px;
-
   cursor:pointer;
 }
 
@@ -440,57 +421,7 @@ header img{
 
 .catalogo p{
   font-size:20px;
-  opacity:.75;
-}
-
-/* PRIVACIDAD */
-
-.privacy-section{
-  padding:80px 20px;
-  background:#0f0f0f;
-}
-
-.privacy-card{
-  max-width:900px;
-  margin:auto;
-
-  background:rgba(255,255,255,.06);
-
-  backdrop-filter:blur(12px);
-
-  border-radius:28px;
-
-  padding:50px 35px;
-
-  text-align:center;
-
-  color:white;
-}
-
-.privacy-card h2{
-  font-size:42px;
-  margin-bottom:20px;
-}
-
-.privacy-card p{
-  font-size:18px;
-  line-height:1.8;
-}
-
-.privacy-btn{
-  margin-top:35px;
-
-  padding:16px 34px;
-
-  border:none;
-  border-radius:14px;
-
-  background:white;
-  color:#111;
-
-  font-weight:bold;
-
-  cursor:pointer;
+  opacity:0.75;
 }
 
 /* WHATSAPP */
@@ -498,8 +429,8 @@ header img{
 .whatsapp-float{
   position:fixed;
 
-  right:25px;
   bottom:25px;
+  right:25px;
 
   width:70px;
   height:70px;
@@ -518,11 +449,11 @@ header img{
 
   font-size:34px;
 
-  z-index:99999;
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
 
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
+  z-index:999;
 
-  transition:.3s;
+  transition:0.3s;
 }
 
 .whatsapp-float:hover{
@@ -533,12 +464,8 @@ header img{
 
 @media(max-width:768px){
 
-  header img{
-    width:115px;
-  }
-
   .hero{
-    padding:135px 20px 70px;
+    padding-top:140px;
   }
 
   .hero h1{
@@ -550,17 +477,15 @@ header img{
   }
 
   .slide img{
-    height:430px;
+    height:420px;
   }
 
   .slide-text{
-    left:18px;
-    right:18px;
+    left:20px;
+    right:20px;
     bottom:20px;
 
     padding:20px;
-
-    max-width:none;
   }
 
   .slide-text h2{
@@ -571,80 +496,23 @@ header img{
     font-size:18px;
   }
 
-  .grid{
-    padding:50px 20px;
-  }
-
-  .card h3{
-    font-size:24px;
-  }
-
-  .card p{
-    font-size:18px;
-  }
-
   .benefits h2,
-  .about-card h2,
-  .catalogo h2,
-  .privacy-card h2{
-    font-size:30px;
-  }
-
-  .about-card,
-  .privacy-card{
-    padding:35px 22px;
-  }
-
-  .about-card p,
-  .privacy-card p{
-    font-size:17px;
-  }
-
-  .about-content,
-  .privacy-content{
-    padding:28px 22px;
-  }
-
-  .about-content h2,
-  .privacy-content h2{
-    font-size:28px;
-  }
-
-  .about-content h3,
-  .privacy-content h3{
-    font-size:22px;
-  }
-
-  .about-content p,
-  .about-content li,
-  .privacy-content p,
-  .privacy-content li{
-    font-size:16px;
-  }
-
-  .whatsapp-float{
-    width:62px;
-    height:62px;
-    font-size:30px;
-    right:18px;
-    bottom:18px;
+  .catalogo h2{
+    font-size:32px;
   }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-  <img src="Logo.jpeg" alt="Logo">
-</header>
 
-<!-- HERO -->
+  <img src="Logo.jpeg">
+
+</header>
 
 <section class="hero">
 
@@ -672,92 +540,378 @@ header img{
 
   <div class="slides">
 
+    <!-- SLIDE 1 -->
+
     <div class="slide">
-      <img src="casgpe.png" alt="">
+
+      <img src="casgpe.png">
+
       <div class="slide-text">
+
         <h2>Casa en Guadalupe</h2>
+
         <p>Desde $3 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar información
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Guadalupe"
+        target="_blank">
+
+        Solicitar información
+
         </a>
+
       </div>
+
     </div>
 
+    <!-- SLIDE 2 -->
+
     <div class="slide">
-      <img src="casapo.png" alt="">
+
+      <img src="casapo.png">
+
       <div class="slide-text">
+
         <h2>Casa en Apodaca</h2>
+
         <p>Desde $3.5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar información
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Apodaca"
+        target="_blank">
+
+        Solicitar información
+
         </a>
+
       </div>
+
     </div>
 
+    <!-- SLIDE 3 -->
+
     <div class="slide">
-      <img src="casgarT.png" alt="">
+
+      <img src="casgarT.png">
+
       <div class="slide-text">
+
         <h2>Casa en García</h2>
+
         <p>Desde $2.4 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar información
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20García"
+        target="_blank">
+
+        Solicitar información
+
         </a>
+
       </div>
+
     </div>
 
+    <!-- SLIDE 4 -->
+
     <div class="slide">
-      <img src="cascum.png" alt="">
+
+      <img src="cascum.png">
+
       <div class="slide-text">
+
         <h2>Casa en Cumbres</h2>
+
         <p>Desde $7.5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar información
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Cumbres"
+        target="_blank">
+
+        Solicitar información
+
         </a>
+
       </div>
+
     </div>
 
+    <!-- SLIDE 5 -->
+
     <div class="slide">
-      <img src="depsta.png" alt="">
+
+      <img src="depsta.png">
+
       <div class="slide-text">
+
         <h2>Departamentos Sta. Catarina</h2>
+
         <p>Desde $5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar información
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Santa%20Catarina"
+        target="_blank">
+
+        Solicitar información
+
         </a>
+
       </div>
+
     </div>
 
+    <!-- SLIDE 6 -->
+
     <div class="slide">
-      <img src="depsur.jpg" alt="">
+
+      <img src="depsur.jpg">
+
       <div class="slide-text">
+
         <h2>Departamentos Sur Mty</h2>
+
         <p>Desde $4 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar información
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Sur%20Monterrey"
+        target="_blank">
+
+        Solicitar información
+
         </a>
+
       </div>
+
     </div>
 
+    <!-- SLIDE 7 -->
+
     <div class="slide">
-      <img src="terrcar.png" alt="">
+
+      <img src="terrcar.png">
+
       <div class="slide-text">
-        <h2>Terrenos Carretera Nacional</h2>
+
+        <h2>Terrenos Residenciales Carretera Nacional</h2>
+
         <p>Desde $2.5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar información
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Carretera%20Nacional"
+        target="_blank">
+
+        Solicitar información
+
         </a>
+
       </div>
+
     </div>
 
+    <!-- SLIDE 8 -->
+
     <div class="slide">
-      <img src="masroj.png" alt="">
+
+      <img src="masroj.png">
+
       <div class="slide-text">
-        <h2>Busco otra ubicación</h2>
-        <p>Asesoría personalizada</p>
-        <a class="btn" href="https://wa.me/528116027856" target="_blank">
-          Solicitar asesoría
+
+        <h2>Busco otra ubicación y/o presupuesto</h2>
+
+        <p>$*</p>
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20busco%20otra%20ubicación%20y/o%20presupuesto"
+        target="_blank">
+
+        Solicitar asesoría
+
         </a>
+
       </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROPIEDADES -->
+
+<section class="grid">
+
+  <div class="card">
+
+    <img src="casgpe.png">
+
+    <div class="card-content">
+
+      <h3>Casa en Guadalupe</h3>
+
+      <p>Desde $3 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Guadalupe"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="casapo.png">
+
+    <div class="card-content">
+
+      <h3>Casa en Apodaca</h3>
+
+      <p>Desde $3.5 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Apodaca"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="casgarT.png">
+
+    <div class="card-content">
+
+      <h3>Casa en García</h3>
+
+      <p>Desde $2.4 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20García"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="cascum.png">
+
+    <div class="card-content">
+
+      <h3>Casa en Cumbres</h3>
+
+      <p>Desde $7.5 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Cumbres"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="depsta.png">
+
+    <div class="card-content">
+
+      <h3>Departamentos Sta. Catarina</h3>
+
+      <p>Desde $5 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Santa%20Catarina"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="depsur.jpg">
+
+    <div class="card-content">
+
+      <h3>Departamentos Sur Mty</h3>
+
+      <p>Desde $4 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Sur%20Monterrey"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="terrcar.png">
+
+    <div class="card-content">
+
+      <h3>Terrenos Residenciales Carretera Nacional</h3>
+
+      <p>Desde $2.5 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Carretera%20Nacional"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <img src="masroj.png">
+
+    <div class="card-content">
+
+      <h3>Busco otra ubicación y/o presupuesto</h3>
+
+      <p>$*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20busco%20otra%20ubicación%20y/o%20presupuesto"
+      target="_blank">
+
+      Solicitar asesoría
+
+      </a>
+
     </div>
 
   </div>
@@ -775,97 +929,135 @@ header img{
   <div class="benefits-grid">
 
     <div class="benefit-card">
+
       <h3>✔ Atención Personalizada</h3>
+
       <p>
         Te acompañamos en cada paso para encontrar la propiedad ideal.
       </p>
+
     </div>
 
     <div class="benefit-card">
+
       <h3>✔ Alta Plusvalía</h3>
+
       <p>
         Propiedades ubicadas en zonas con gran crecimiento y valor.
       </p>
+
     </div>
 
     <div class="benefit-card">
+
       <h3>✔ Asesoría Financiera</h3>
+
       <p>
         Te ayudamos con Infonavit, Cofinavit y crédito bancario.
       </p>
+
     </div>
 
   </div>
 
 </section>
+/* PRESENTACIÓN */
 
-<!-- PRESENTACIÓN -->
+.about-section{
+  padding:100px 20px;
+  background:#f8f8f8;
+}
 
-<section class="about-section">
+.about-card{
+  max-width:900px;
+  margin:auto;
+  background:white;
+  border-radius:28px;
+  padding:60px 40px;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,0.12);
+}
 
-  <div class="about-card">
+.about-card h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
 
-    <h2>Conoce RojAlm Asesores</h2>
+.about-card p{
+  font-size:20px;
+  line-height:1.8;
+  opacity:.8;
+}
 
-    <p>
-      Somos una firma inmobiliaria enfocada en brindar atención personalizada,
-      asesoría profesional y acompañamiento integral para ayudarte a encontrar
-      la propiedad ideal en Nuevo León.
-    </p>
+.about-btn{
+  margin-top:35px;
+  padding:16px 34px;
+  border:none;
+  border-radius:14px;
+  background:#111;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.35s;
+}
 
-    <button class="about-btn" onclick="abrirPresentacion()">
-      Ver presentación completa
-    </button>
+.about-btn:hover{
+  transform:translateY(-4px);
+}
 
-  </div>
+.about-modal{
+  display:none;
+  position:fixed;
+  z-index:99999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background:rgba(0,0,0,.82);
+  padding:20px;
+}
 
-</section>
+.about-content{
+  background:#fff;
+  color:#111;
+  max-width:950px;
+  margin:40px auto;
+  border-radius:28px;
+  padding:45px;
+  position:relative;
+  animation:fadeUp .4s ease;
+}
 
-<!-- MODAL PRESENTACIÓN -->
+.about-content h2{
+  font-size:40px;
+  margin-bottom:30px;
+}
 
-<div class="about-modal" id="aboutModal">
+.about-content h3{
+  margin-top:30px;
+  margin-bottom:12px;
+  font-size:28px;
+}
 
-  <div class="about-content">
+.about-content p,
+.about-content li{
+  line-height:1.9;
+  font-size:18px;
+}
 
-    <span class="close-about" onclick="cerrarPresentacion()">
-      ✕
-    </span>
+.about-content ul{
+  padding-left:20px;
+}
 
-    <h2>RojAlm Asesores</h2>
-
-    <p>
-      RojAlm Asesores es una firma inmobiliaria liderada por Mike Rojas,
-      especializada en la comercialización de propiedades residenciales,
-      departamentos y terrenos en las mejores zonas de Nuevo León.
-    </p>
-
-    <h3>Nuestra misión</h3>
-
-    <p>
-      Ayudar a cada cliente a tomar decisiones inmobiliarias seguras,
-      inteligentes y rentables mediante asesoría profesional y atención personalizada.
-    </p>
-
-    <h3>Nuestra visión</h3>
-
-    <p>
-      Convertirnos en una inmobiliaria referente en confianza,
-      profesionalismo y resultados en el mercado inmobiliario.
-    </p>
-
-    <h3>Valores</h3>
-
-    <ul>
-      <li>Compromiso</li>
-      <li>Confianza</li>
-      <li>Transparencia</li>
-      <li>Atención personalizada</li>
-      <li>Profesionalismo</li>
-    </ul>
-
-  </div>
-
-</div>
+.close-about{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font-size:30px;
+  cursor:pointer;
+}
 
 <!-- CTA -->
 
@@ -887,7 +1079,7 @@ header img{
 
 </section>
 
-<!-- PRIVACIDAD -->
+<!-- AVISO DE PRIVACIDAD -->
 
 <section class="privacy-section">
 
@@ -896,7 +1088,9 @@ header img{
     <h2>Aviso de Privacidad</h2>
 
     <p>
-      En RojAlm Asesores protegemos la información de nuestros clientes.
+      En RojAlm Asesores protegemos la información de nuestros clientes y prospectos.
+      Tus datos personales serán tratados de forma confidencial y utilizados únicamente
+      para fines relacionados con servicios inmobiliarios.
     </p>
 
     <button class="privacy-btn" onclick="abrirAviso()">
@@ -907,7 +1101,7 @@ header img{
 
 </section>
 
-<!-- MODAL PRIVACIDAD -->
+<!-- MODAL -->
 
 <div class="privacy-modal" id="privacyModal">
 
@@ -917,38 +1111,238 @@ header img{
       ✕
     </span>
 
-    <h2>Aviso de Privacidad</h2>
+    <h2>AVISO DE PRIVACIDAD</h2>
 
     <h3>RojAlm Asesores</h3>
 
     <p>
-      Tus datos personales serán utilizados únicamente para fines relacionados
-      con servicios inmobiliarios y atención personalizada.
+    En atención a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares,
+    RojAlm Asesores pone a disposición el presente Aviso de Privacidad con el objetivo de informarle
+    el tratamiento que se dará a los datos personales proporcionados por nuestros clientes, prospectos
+    y usuarios interesados en servicios de comercialización inmobiliaria.
     </p>
 
-    <h4>Contacto</h4>
+    <h4>1. Responsable de sus datos personales</h4>
 
     <p>
-      Correo: rojalmasesores@gmail.com
-      <br><br>
-      WhatsApp: 81 1602 7856
+    RojAlm Asesores es responsable del uso, manejo y protección de sus datos personales,
+    comprometidos en todo momento con la confidencialidad, seguridad y privacidad de la información proporcionada.
+    </p>
+
+    <h4>2. Datos que podremos solicitar</h4>
+
+    <ul>
+      <li>Nombre completo</li>
+      <li>Fecha de nacimiento</li>
+      <li>Número telefónico y WhatsApp</li>
+      <li>Correo electrónico</li>
+      <li>Ciudad o domicilio</li>
+      <li>Información relacionada con inmuebles</li>
+      <li>Datos fiscales para facturación</li>
+      <li>Información financiera o crediticia</li>
+    </ul>
+
+    <h4>3. Finalidad del uso de la información</h4>
+
+    <ul>
+      <li>Brindar asesoría inmobiliaria personalizada</li>
+      <li>Dar seguimiento a solicitudes</li>
+      <li>Promover propiedades en venta o renta</li>
+      <li>Coordinar citas y negociaciones</li>
+      <li>Elaborar contratos y documentación</li>
+      <li>Gestionar trámites inmobiliarios</li>
+      <li>Mantener comunicación vía llamada, correo o WhatsApp</li>
+    </ul>
+
+    <h4>4. Confidencialidad y protección</h4>
+
+    <p>
+    RojAlm Asesores implementa medidas de seguridad físicas, administrativas y digitales
+    para proteger su información personal y evitar accesos no autorizados.
+    </p>
+
+    <h4>5. Compartición de información</h4>
+
+    <p>
+    Sus datos podrán ser compartidos únicamente cuando sea necesario para la operación inmobiliaria con:
+    </p>
+
+    <ul>
+      <li>Instituciones bancarias</li>
+      <li>Notarías públicas</li>
+      <li>Desarrolladores inmobiliarios</li>
+      <li>Dependencias gubernamentales</li>
+      <li>Empresas de avalúos o gestoría</li>
+    </ul>
+
+    <h4>6. Derechos del titular</h4>
+
+    <p>
+    Usted podrá solicitar acceso, corrección, cancelación u oposición al uso de sus datos personales.
+    </p>
+
+    <h4>7. Uso de plataformas digitales</h4>
+
+    <p>
+    La información compartida mediante formularios web, redes sociales, correo electrónico,
+    llamadas telefónicas o WhatsApp será tratada conforme a este Aviso de Privacidad.
+    </p>
+
+    <h4>8. Cambios al aviso de privacidad</h4>
+
+    <p>
+    RojAlm Asesores podrá actualizar el presente Aviso de Privacidad en cualquier momento.
+    </p>
+
+    <h4>9. Aceptación</h4>
+
+    <p>
+    Al proporcionar sus datos personales y utilizar nuestros servicios,
+    usted acepta los términos establecidos en el presente Aviso de Privacidad.
+    </p>
+
+    <h4>10. Contacto</h4>
+
+    <p>
+    • Correo electrónico: rojalmasesores@gmail.com<br><br>
+    • Teléfono / WhatsApp: 81 1602 7856
+    </p>
+
+    <p style="margin-top:30px;opacity:.7;">
+      Última actualización: Mayo 2025
     </p>
 
   </div>
 
 </div>
 
-<!-- WHATSAPP -->
+<style>
 
-<a class="whatsapp-float"
-href="https://wa.me/528116027856"
-target="_blank">
+.privacy-section{
+  padding:80px 20px;
+  background:#0f0f0f;
+}
 
-💬
+.privacy-card{
+  max-width:900px;
+  margin:auto;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(12px);
+  border-radius:28px;
+  padding:50px 35px;
+  text-align:center;
+  color:white;
+  box-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
 
-</a>
+.privacy-card h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
 
-<!-- SCRIPT -->
+.privacy-card p{
+  font-size:18px;
+  line-height:1.8;
+  opacity:.88;
+}
+
+.privacy-btn{
+  margin-top:35px;
+  padding:16px 34px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ffffff,#d9d9d9);
+  color:#111;
+  font-weight:bold;
+  font-size:17px;
+  cursor:pointer;
+  transition:.35s;
+  box-shadow:0 8px 25px rgba(255,255,255,0.18);
+}
+
+.privacy-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+.privacy-modal{
+  display:none;
+  position:fixed;
+  z-index:99999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background:rgba(0,0,0,.82);
+  padding:20px;
+}
+
+.privacy-content{
+  background:#fff;
+  color:#111;
+  max-width:900px;
+  margin:40px auto;
+  border-radius:28px;
+  padding:45px;
+  position:relative;
+  animation:fadeUp .4s ease;
+}
+
+.privacy-content h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.privacy-content h3{
+  margin-bottom:30px;
+  opacity:.7;
+}
+
+.privacy-content h4{
+  margin-top:28px;
+  margin-bottom:12px;
+  font-size:22px;
+}
+
+.privacy-content p,
+.privacy-content li{
+  line-height:1.9;
+  font-size:17px;
+}
+
+.privacy-content ul{
+  padding-left:20px;
+}
+
+.close-modal{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font-size:30px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .privacy-card{
+    padding:35px 22px;
+  }
+
+  .privacy-card h2{
+    font-size:30px;
+  }
+
+  .privacy-content{
+    padding:28px 22px;
+  }
+
+  .privacy-content h2{
+    font-size:28px;
+  }
+
+}
+
+</style>
 
 <script>
 
@@ -960,6 +1354,15 @@ function cerrarAviso(){
   document.getElementById("privacyModal").style.display = "none";
 }
 
+window.onclick = function(event){
+
+  const modal = document.getElementById("privacyModal");
+
+  if(event.target == modal){
+    modal.style.display = "none";
+  }
+
+}
 function abrirPresentacion(){
   document.getElementById("aboutModal").style.display = "block";
 }
@@ -968,22 +1371,4 @@ function cerrarPresentacion(){
   document.getElementById("aboutModal").style.display = "none";
 }
 
-window.onclick = function(event){
-
-  const privacyModal = document.getElementById("privacyModal");
-  const aboutModal = document.getElementById("aboutModal");
-
-  if(event.target == privacyModal){
-    privacyModal.style.display = "none";
-  }
-
-  if(event.target == aboutModal){
-    aboutModal.style.display = "none";
-  }
-
-}
-
 </script>
-
-</body>
-</html>
