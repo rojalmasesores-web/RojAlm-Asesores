@@ -2,12 +2,14 @@
 <html lang="es">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>RojAlm Asesores</title>
 
 <style>
+
+/* RESET */
 
 *{
   margin:0;
@@ -30,57 +32,68 @@ body{
 
 header{
   position:fixed;
-  width:100%;
   top:0;
   left:0;
-  z-index:1000;
-  background:rgba(0,0,0,0.75);
-  backdrop-filter:blur(10px);
-  padding:15px;
+  width:100%;
+  z-index:9999;
+
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(12px);
+
+  padding:14px 20px;
   text-align:center;
 }
 
 header img{
-  width:140px;
+  width:135px;
+  max-width:100%;
 }
 
 /* HERO */
 
 .hero{
-  background:linear-gradient(to right,#000,#1a1a1a);
+  background:linear-gradient(to right,#000,#1c1c1c);
   color:white;
   text-align:center;
+
   padding:160px 20px 90px;
 }
 
 .hero h1{
   font-size:54px;
-  margin-bottom:20px;
   line-height:1.1;
+  margin-bottom:20px;
 }
 
 .hero p{
   font-size:22px;
-  opacity:0.85;
+  opacity:.85;
+  max-width:800px;
+  margin:auto;
 }
 
 /* BOTONES */
 
 .btn{
   display:inline-block;
-  margin-top:25px;
+
+  margin-top:28px;
   padding:16px 34px;
+
   background:#25D366;
   color:white;
+
   text-decoration:none;
-  border-radius:14px;
   font-weight:bold;
-  transition:.35s;
+
+  border-radius:14px;
+
+  transition:.35s ease;
 }
 
 .btn:hover{
   transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(37,211,102,0.4);
+  box-shadow:0 10px 28px rgba(37,211,102,.35);
 }
 
 /* CARRUSEL */
@@ -106,19 +119,24 @@ header img{
   width:100%;
   height:650px;
   object-fit:cover;
-  filter:brightness(0.68);
+  filter:brightness(.65);
 }
 
 .slide-text{
   position:absolute;
+
   left:50px;
   bottom:50px;
-  background:rgba(255,255,255,0.12);
+
+  background:rgba(255,255,255,.12);
   backdrop-filter:blur(10px);
+
   color:white;
+
   padding:30px;
-  border-radius:25px;
-  max-width:500px;
+  border-radius:24px;
+
+  max-width:520px;
 }
 
 .slide-text h2{
@@ -175,8 +193,12 @@ header img{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
   gap:30px;
+
   padding:90px 40px;
 }
 
@@ -184,7 +206,9 @@ header img{
   background:white;
   border-radius:24px;
   overflow:hidden;
-  box-shadow:0 12px 35px rgba(0,0,0,0.12);
+
+  box-shadow:0 10px 35px rgba(0,0,0,.12);
+
   transition:.35s;
 }
 
@@ -219,6 +243,7 @@ header img{
   background:#111;
   color:white;
   text-align:center;
+
   padding:100px 25px;
 }
 
@@ -229,15 +254,22 @@ header img{
 
 .benefits-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
   gap:30px;
 }
 
 .benefit-card{
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,.06);
+
   backdrop-filter:blur(8px);
+
   padding:40px 30px;
+
   border-radius:24px;
+
   transition:.35s;
 }
 
@@ -252,7 +284,7 @@ header img{
 
 .benefit-card p{
   line-height:1.8;
-  opacity:0.85;
+  opacity:.85;
 }
 
 /* PRESENTACIÓN */
@@ -265,11 +297,16 @@ header img{
 .about-card{
   max-width:900px;
   margin:auto;
+
   background:white;
+
   border-radius:28px;
+
   padding:60px 40px;
+
   text-align:center;
-  box-shadow:0 10px 40px rgba(0,0,0,0.12);
+
+  box-shadow:0 10px 40px rgba(0,0,0,.12);
 }
 
 .about-card h2{
@@ -285,14 +322,20 @@ header img{
 
 .about-btn{
   margin-top:35px;
+
   padding:16px 34px;
+
   border:none;
   border-radius:14px;
+
   background:#111;
   color:white;
+
   font-size:17px;
   font-weight:bold;
+
   cursor:pointer;
+
   transition:.35s;
 }
 
@@ -300,55 +343,86 @@ header img{
   transform:translateY(-4px);
 }
 
-.about-modal{
+/* MODAL */
+
+.about-modal,
+.privacy-modal{
   display:none;
+
   position:fixed;
   z-index:99999;
+
   left:0;
   top:0;
+
   width:100%;
   height:100%;
+
   overflow:auto;
+
   background:rgba(0,0,0,.82);
+
   padding:20px;
 }
 
-.about-content{
-  background:#fff;
+.about-content,
+.privacy-content{
+  background:white;
   color:#111;
+
   max-width:950px;
+
   margin:40px auto;
+
   border-radius:28px;
+
   padding:45px;
+
   position:relative;
 }
 
-.about-content h2{
+.about-content h2,
+.privacy-content h2{
   font-size:38px;
-  margin-bottom:25px;
+  margin-bottom:15px;
 }
 
-.about-content h3{
-  margin-top:30px;
+.about-content h3,
+.privacy-content h3{
+  margin-top:25px;
   margin-bottom:12px;
   font-size:26px;
 }
 
+.about-content h4,
+.privacy-content h4{
+  margin-top:28px;
+  margin-bottom:12px;
+  font-size:22px;
+}
+
 .about-content p,
-.about-content li{
+.about-content li,
+.privacy-content p,
+.privacy-content li{
   line-height:1.9;
   font-size:18px;
 }
 
-.about-content ul{
+.about-content ul,
+.privacy-content ul{
   padding-left:20px;
 }
 
-.close-about{
+.close-about,
+.close-modal{
   position:absolute;
+
   top:18px;
   right:22px;
+
   font-size:30px;
+
   cursor:pointer;
 }
 
@@ -366,7 +440,7 @@ header img{
 
 .catalogo p{
   font-size:20px;
-  opacity:0.75;
+  opacity:.75;
 }
 
 /* PRIVACIDAD */
@@ -379,11 +453,17 @@ header img{
 .privacy-card{
   max-width:900px;
   margin:auto;
-  background:rgba(255,255,255,0.06);
+
+  background:rgba(255,255,255,.06);
+
   backdrop-filter:blur(12px);
+
   border-radius:28px;
+
   padding:50px 35px;
+
   text-align:center;
+
   color:white;
 }
 
@@ -399,68 +479,17 @@ header img{
 
 .privacy-btn{
   margin-top:35px;
+
   padding:16px 34px;
+
   border:none;
   border-radius:14px;
+
   background:white;
   color:#111;
+
   font-weight:bold;
-  cursor:pointer;
-}
 
-.privacy-modal{
-  display:none;
-  position:fixed;
-  z-index:99999;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  overflow:auto;
-  background:rgba(0,0,0,.82);
-  padding:20px;
-}
-
-.privacy-content{
-  background:#fff;
-  color:#111;
-  max-width:900px;
-  margin:40px auto;
-  border-radius:28px;
-  padding:45px;
-  position:relative;
-}
-
-.privacy-content h2{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-.privacy-content h3{
-  margin-bottom:30px;
-}
-
-.privacy-content h4{
-  margin-top:28px;
-  margin-bottom:12px;
-  font-size:22px;
-}
-
-.privacy-content p,
-.privacy-content li{
-  line-height:1.9;
-  font-size:17px;
-}
-
-.privacy-content ul{
-  padding-left:20px;
-}
-
-.close-modal{
-  position:absolute;
-  top:18px;
-  right:22px;
-  font-size:30px;
   cursor:pointer;
 }
 
@@ -468,27 +497,48 @@ header img{
 
 .whatsapp-float{
   position:fixed;
-  bottom:25px;
+
   right:25px;
+  bottom:25px;
+
   width:70px;
   height:70px;
+
   background:#25D366;
+
   border-radius:50%;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   color:white;
+
   text-decoration:none;
+
   font-size:34px;
-  z-index:999;
+
+  z-index:99999;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+  transition:.3s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.1);
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
+  header img{
+    width:115px;
+  }
+
   .hero{
-    padding-top:140px;
+    padding:135px 20px 70px;
   }
 
   .hero h1{
@@ -500,14 +550,17 @@ header img{
   }
 
   .slide img{
-    height:420px;
+    height:430px;
   }
 
   .slide-text{
-    left:20px;
-    right:20px;
+    left:18px;
+    right:18px;
     bottom:20px;
+
     padding:20px;
+
+    max-width:none;
   }
 
   .slide-text h2{
@@ -522,16 +575,29 @@ header img{
     padding:50px 20px;
   }
 
+  .card h3{
+    font-size:24px;
+  }
+
+  .card p{
+    font-size:18px;
+  }
+
+  .benefits h2,
+  .about-card h2,
+  .catalogo h2,
+  .privacy-card h2{
+    font-size:30px;
+  }
+
   .about-card,
   .privacy-card{
     padding:35px 22px;
   }
 
-  .about-card h2,
-  .privacy-card h2,
-  .benefits h2,
-  .catalogo h2{
-    font-size:30px;
+  .about-card p,
+  .privacy-card p{
+    font-size:17px;
   }
 
   .about-content,
@@ -544,6 +610,26 @@ header img{
     font-size:28px;
   }
 
+  .about-content h3,
+  .privacy-content h3{
+    font-size:22px;
+  }
+
+  .about-content p,
+  .about-content li,
+  .privacy-content p,
+  .privacy-content li{
+    font-size:16px;
+  }
+
+  .whatsapp-float{
+    width:62px;
+    height:62px;
+    font-size:30px;
+    right:18px;
+    bottom:18px;
+  }
+
 }
 
 </style>
@@ -552,9 +638,13 @@ header img{
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-  <img src="Logo.jpeg">
+  <img src="Logo.jpeg" alt="Logo">
 </header>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -583,89 +673,89 @@ header img{
   <div class="slides">
 
     <div class="slide">
-      <img src="casgpe.png">
+      <img src="casgpe.png" alt="">
       <div class="slide-text">
         <h2>Casa en Guadalupe</h2>
         <p>Desde $3 MDP*</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar información
+          Solicitar información
         </a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="casapo.png">
+      <img src="casapo.png" alt="">
       <div class="slide-text">
         <h2>Casa en Apodaca</h2>
         <p>Desde $3.5 MDP*</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar información
+          Solicitar información
         </a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="casgarT.png">
+      <img src="casgarT.png" alt="">
       <div class="slide-text">
         <h2>Casa en García</h2>
         <p>Desde $2.4 MDP*</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar información
+          Solicitar información
         </a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="cascum.png">
+      <img src="cascum.png" alt="">
       <div class="slide-text">
         <h2>Casa en Cumbres</h2>
         <p>Desde $7.5 MDP*</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar información
+          Solicitar información
         </a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="depsta.png">
+      <img src="depsta.png" alt="">
       <div class="slide-text">
         <h2>Departamentos Sta. Catarina</h2>
         <p>Desde $5 MDP*</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar información
+          Solicitar información
         </a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="depsur.jpg">
+      <img src="depsur.jpg" alt="">
       <div class="slide-text">
         <h2>Departamentos Sur Mty</h2>
         <p>Desde $4 MDP*</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar información
+          Solicitar información
         </a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="terrcar.png">
+      <img src="terrcar.png" alt="">
       <div class="slide-text">
         <h2>Terrenos Carretera Nacional</h2>
         <p>Desde $2.5 MDP*</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar información
+          Solicitar información
         </a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="masroj.png">
+      <img src="masroj.png" alt="">
       <div class="slide-text">
         <h2>Busco otra ubicación</h2>
         <p>Asesoría personalizada</p>
         <a class="btn" href="https://wa.me/528116027856" target="_blank">
-        Solicitar asesoría
+          Solicitar asesoría
         </a>
       </div>
     </div>
@@ -678,7 +768,9 @@ header img{
 
 <section class="benefits">
 
-  <h2>¿Por qué elegir RojAlm Asesores?</h2>
+  <h2>
+    ¿Por qué elegir RojAlm Asesores?
+  </h2>
 
   <div class="benefits-grid">
 
@@ -795,7 +887,7 @@ header img{
 
 </section>
 
-<!-- AVISO -->
+<!-- PRIVACIDAD -->
 
 <section class="privacy-section">
 
@@ -837,7 +929,8 @@ header img{
     <h4>Contacto</h4>
 
     <p>
-      Correo: rojalmasesores@gmail.com<br><br>
+      Correo: rojalmasesores@gmail.com
+      <br><br>
       WhatsApp: 81 1602 7856
     </p>
 
@@ -854,6 +947,8 @@ target="_blank">
 💬
 
 </a>
+
+<!-- SCRIPT -->
 
 <script>
 
