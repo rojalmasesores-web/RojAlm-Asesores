@@ -405,7 +405,127 @@ header img{
   }
 
 }
+/* PRESENTACIÓN */
 
+.about-section{
+  padding:100px 20px;
+  background:#f8f8f8;
+}
+
+.about-card{
+  max-width:950px;
+  margin:auto;
+  background:white;
+  border-radius:28px;
+  padding:60px 40px;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,0.12);
+}
+
+.about-card h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.about-card p{
+  font-size:20px;
+  line-height:1.8;
+  opacity:.8;
+}
+
+.about-btn{
+  margin-top:35px;
+  padding:16px 34px;
+  border:none;
+  border-radius:14px;
+  background:#111;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.35s;
+}
+
+.about-btn:hover{
+  transform:translateY(-4px);
+}
+
+.about-modal{
+  display:none;
+  position:fixed;
+  z-index:99999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background:rgba(0,0,0,.82);
+  padding:20px;
+}
+
+.about-content{
+  background:#fff;
+  color:#111;
+  max-width:950px;
+  margin:40px auto;
+  border-radius:28px;
+  padding:45px;
+  position:relative;
+  animation:fadeUp .4s ease;
+}
+
+.about-content h2{
+  font-size:40px;
+  margin-bottom:25px;
+}
+
+.about-content h3{
+  margin-top:35px;
+  margin-bottom:15px;
+  font-size:28px;
+}
+
+.about-content p,
+.about-content li{
+  line-height:1.9;
+  font-size:18px;
+}
+
+.about-content ul{
+  padding-left:20px;
+}
+
+.close-about{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font-size:30px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .about-card{
+    padding:35px 22px;
+  }
+
+  .about-card h2{
+    font-size:30px;
+  }
+
+  .about-content{
+    padding:28px 22px;
+  }
+
+  .about-content h2{
+    font-size:30px;
+  }
+
+  .about-content h3{
+    font-size:24px;
+  }
+
+}
 </style>
 </head>
 
@@ -864,7 +984,128 @@ header img{
   </div>
 
 </section>
+<!-- PRESENTACIÓN -->
 
+<section class="about-section">
+
+  <div class="about-card">
+
+    <h2>Conoce RojAlm Asesores</h2>
+
+    <p>
+      Somos una firma inmobiliaria enfocada en brindar atención personalizada,
+      transparencia y acompañamiento profesional en cada etapa del proceso inmobiliario.
+    </p>
+
+    <button class="about-btn" onclick="abrirPresentacion()">
+      Leer presentación completa
+    </button>
+
+  </div>
+
+</section>
+
+<!-- MODAL PRESENTACIÓN -->
+
+<div class="about-modal" id="aboutModal">
+
+  <div class="about-content">
+
+    <span class="close-about" onclick="cerrarPresentacion()">
+      ✕
+    </span>
+
+    <h2>RojAlm Asesores</h2>
+
+    <p>
+      En RojAlm Asesores somos una firma inmobiliaria liderada por Mike Rojas enfocada en brindar atención personalizada, transparencia y acompañamiento profesional en cada etapa del proceso inmobiliario.
+    </p>
+
+    <p>
+      Nos especializamos en la venta, renta y promoción de propiedades residenciales en Nuevo León, ayudando a nuestros clientes a encontrar no solo una propiedad, sino el lugar ideal para construir su futuro.
+    </p>
+
+    <p>
+      Nuestro compromiso es ofrecer un servicio cercano, confiable y eficiente, entendiendo las necesidades de cada cliente para convertir sus objetivos inmobiliarios en una experiencia segura y satisfactoria.
+    </p>
+
+    <h3>Nuestra Historia</h3>
+
+    <p>
+      RojAlm Asesores nace con la visión de crear una inmobiliaria diferente: más humana, más cercana y enfocada realmente en las personas.
+    </p>
+
+    <p>
+      Lo que comenzó como un proyecto independiente con la intención de ayudar familias y compradores a encontrar su hogar ideal, se ha convertido en una agencia comprometida con ofrecer asesoría profesional y atención personalizada en cada operación.
+    </p>
+
+    <p>
+      Con dedicación, honestidad y pasión por el sector inmobiliario, hemos logrado construir relaciones de confianza con nuestros clientes, acompañándolos en una de las decisiones más importantes de su vida: invertir en su patrimonio.
+    </p>
+
+    <p>
+      Hoy seguimos creciendo, adaptándonos a las nuevas tendencias del mercado y utilizando herramientas digitales modernas para brindar una experiencia inmobiliaria más ágil, segura y profesional.
+    </p>
+
+    <h3>Nuestra Misión</h3>
+
+    <p>
+      Brindar asesoría inmobiliaria profesional y personalizada, ofreciendo soluciones confiables que ayuden a nuestros clientes a tomar decisiones seguras para proteger y hacer crecer su patrimonio.
+    </p>
+
+    <h3>Nuestra Visión</h3>
+
+    <p>
+      Ser una agencia inmobiliaria reconocida en Nuevo León por su confianza, profesionalismo y calidad de servicio, destacando por crear relaciones duraderas con nuestros clientes y por ofrecer experiencias inmobiliarias transparentes y eficientes.
+    </p>
+
+    <h3>Nuestros Valores</h3>
+
+    <ul>
+      <li><strong>Honestidad:</strong> Actuamos con transparencia y ética en cada operación inmobiliaria.</li>
+
+      <li><strong>Compromiso:</strong> Nos involucramos en cada proceso como si fuera propio.</li>
+
+      <li><strong>Confianza:</strong> Construimos relaciones sólidas basadas en el respeto y responsabilidad.</li>
+
+      <li><strong>Profesionalismo:</strong> Trabajamos con preparación y enfoque en brindar un servicio de alta calidad.</li>
+
+      <li><strong>Cercanía:</strong> Escuchamos y entendemos las necesidades de cada cliente.</li>
+    </ul>
+
+    <h3>¿Por Qué Elegirnos?</h3>
+
+    <ul>
+      <li>✔ Atención personalizada y cercana.</li>
+
+      <li>✔ Asesoría profesional durante todo el proceso.</li>
+
+      <li>✔ Publicidad estratégica para propiedades.</li>
+
+      <li>✔ Acompañamiento en trámites y negociación.</li>
+
+      <li>✔ Compromiso con la transparencia y confianza.</li>
+
+      <li>✔ Conocimiento del mercado inmobiliario en Nuevo León.</li>
+    </ul>
+
+    <h3>Nuestro Compromiso</h3>
+
+    <p>
+      En RojAlm Asesores creemos que cada propiedad representa una historia, una meta y una inversión importante.
+    </p>
+
+    <p>
+      Por eso trabajamos día con día para ofrecer un servicio inmobiliario profesional, humano y enfocado en generar tranquilidad y resultados para nuestros clientes.
+    </p>
+
+    <p>
+      <strong>Tu patrimonio merece una asesoría confiable.</strong>
+    </p>
+
+  </div>
+
+</div>
 <!-- CTA -->
 
 <section class="catalogo">
@@ -1169,5 +1410,22 @@ window.onclick = function(event){
   }
 
 }
+function abrirPresentacion(){
+  document.getElementById("aboutModal").style.display = "block";
+}
 
+function cerrarPresentacion(){
+  document.getElementById("aboutModal").style.display = "none";
+}
+
+window.addEventListener("click", function(event){
+
+  const aboutModal = document.getElementById("aboutModal");
+
+  if(event.target == aboutModal){
+    aboutModal.style.display = "none";
+  }
+
+});
 </script>
+
