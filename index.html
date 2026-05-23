@@ -2000,8 +2000,6 @@ Solicitar información
 }
 
 </style>
-
-<script>
 <footer style="
 padding:30px;
 text-align:center;
@@ -2009,10 +2007,19 @@ color:#777;
 font-size:14px;
 border-top:1px solid rgba(255,255,255,.08);
 ">
-
 © 2026 RojAlm Asesores | Tu patrimonio merece una asesoría confiable
-
 </footer>
+
+<!-- VISOR DE IMAGEN -->
+<div class="image-modal" id="imageModal">
+
+  <span class="close-image" onclick="cerrarImagen()">
+    ✕
+  </span>
+
+  <img id="imagenGrande">
+
+</div>
 
 <script>
 function abrirImagen(src){
@@ -2044,8 +2051,6 @@ function cerrarPresentacion(){
   document.getElementById("aboutModal").style.display = "none";
 }
 
-/* CARRUSEL MANUAL */
-
 let currentSlide = 0;
 const slides = document.getElementById("slides");
 const totalSlides = 10;
@@ -2065,40 +2070,22 @@ function moverSlide(direction){
   slides.style.transform = `translateX(-${currentSlide * 10}%)`;
 }
 
-/* CERRAR MODALES AL DAR CLIC FUERA */
-
 window.addEventListener("click", function(event){
 
-  const privacyModal = document.getElementById("privacyModal");
-  const aboutModal = document.getElementById("aboutModal");
-  const imageModal = document.getElementById("imageModal");
-
-  if(event.target === privacyModal){
+  if(event.target === document.getElementById("privacyModal")){
     cerrarAviso();
   }
 
-  if(event.target === aboutModal){
+  if(event.target === document.getElementById("aboutModal")){
     cerrarPresentacion();
   }
 
-  if(event.target === imageModal){
+  if(event.target === document.getElementById("imageModal")){
     cerrarImagen();
   }
 
 });
 </script>
-
-<!-- VISOR DE IMAGEN -->
-
-<div class="image-modal" id="imageModal">
-
-  <span class="close-image" onclick="cerrarImagen()">
-    ✕
-  </span>
-
-  <img id="imagenGrande">
-
-</div>
 
 </body>
 </html>
