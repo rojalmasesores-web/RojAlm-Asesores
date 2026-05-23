@@ -337,6 +337,14 @@ transition:transform .6s ease;
   width:100%;
   height:250px;
   object-fit:cover;
+
+  cursor:pointer;
+
+  transition:.35s;
+}
+
+.card img:hover{
+  transform:scale(1.03);
 }
 
 .card-content{
@@ -502,6 +510,54 @@ transition:transform .6s ease;
     font-size:32px;
   }
 
+}
+/* VISOR DE IMAGENES */
+
+.image-modal{
+  display:none;
+
+  position:fixed;
+
+  z-index:999999;
+
+  left:0;
+  top:0;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,.92);
+
+  justify-content:center;
+  align-items:center;
+
+  padding:20px;
+}
+
+.image-modal img{
+  max-width:95%;
+  max-height:95%;
+
+  border-radius:20px;
+
+  object-fit:contain;
+
+  animation:fadeUp .35s ease;
+}
+
+.close-image{
+  position:absolute;
+
+  top:20px;
+  right:30px;
+
+  color:white;
+
+  font-size:42px;
+
+  cursor:pointer;
+
+  z-index:9999999;
 }
 /* PRESENTACIÓN */
 
@@ -1580,7 +1636,58 @@ Solicitar información
   font-size:30px;
   cursor:pointer;
 }
+/* VISOR DE IMAGENES */
 
+.image-modal{
+  display:none;
+
+  position:fixed;
+
+  z-index:999999;
+
+  left:0;
+  top:0;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,.94);
+
+  justify-content:center;
+  align-items:center;
+
+  padding:20px;
+}
+
+.image-modal img{
+
+  max-width:95%;
+  max-height:95%;
+
+  object-fit:contain;
+
+  border-radius:20px;
+
+  box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+  animation:fadeUp .35s ease;
+}
+
+.close-image{
+
+  position:absolute;
+
+  top:20px;
+  right:30px;
+
+  color:white;
+
+  font-size:45px;
+
+  cursor:pointer;
+
+  z-index:9999999;
+}
 @media(max-width:768px){
 
   .privacy-card{
@@ -1666,6 +1773,18 @@ function moverSlide(direction){
 
 }
 </script>
+<!-- VISOR DE IMAGEN -->
+
+<div class="image-modal" id="imageModal">
+
+  <span class="close-image" onclick="cerrarImagen()">
+    ✕
+  </span>
+
+  <img id="imagenGrande">
+
+</div>
+
 
 
 
