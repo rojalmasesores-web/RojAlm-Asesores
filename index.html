@@ -885,195 +885,284 @@ header img{
 
 </section>
 
-<!-- WHATSAPP -->
+<!-- AVISO DE PRIVACIDAD -->
 
-<a class="whatsapp-float"
-href="https://wa.me/528116027856"
-target="_blank">
+<section class="privacy-section">
 
-💬
+  <div class="privacy-card">
 
-</a>
+    <h2>Aviso de Privacidad</h2>
 
-<!-- AVISO PRIVACIDAD -->
+    <p>
+      En RojAlm Asesores protegemos la información de nuestros clientes y prospectos.
+      Tus datos personales serán tratados de forma confidencial y utilizados únicamente
+      para fines relacionados con servicios inmobiliarios.
+    </p>
 
-<section style="
-background:#0f0f0f;
-padding:90px 20px;
-text-align:center;
-color:white;
-">
+    <button class="privacy-btn" onclick="abrirAviso()">
+      Leer aviso completo
+    </button>
 
-  <h2 style="
-  font-size:42px;
-  margin-bottom:20px;
-  ">
-  Aviso de Privacidad
-  </h2>
-
-  <p style="
-  max-width:900px;
-  margin:auto;
-  line-height:1.9;
-  opacity:0.85;
-  font-size:18px;
-  ">
-  En RojAlm Asesores protegemos tu información personal y garantizamos
-  un tratamiento responsable, seguro y confidencial de tus datos.
-
-  Tus datos serán utilizados únicamente para brindarte asesoría inmobiliaria,
-  seguimiento de propiedades y atención comercial.
-  </p>
-
-  <button onclick="abrirAviso()" style="
-  margin-top:35px;
-  padding:18px 42px;
-  border:none;
-  border-radius:16px;
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.35s;
-  box-shadow:0 12px 35px rgba(37,211,102,0.35);
-  ">
-
-    Leer Aviso Completo
-
-  </button>
+  </div>
 
 </section>
 
 <!-- MODAL -->
 
-<div id="modalAviso" style="
-display:none;
-position:fixed;
-z-index:99999;
-left:0;
-top:0;
-width:100%;
-height:100%;
-overflow:auto;
-background:rgba(0,0,0,0.88);
-padding:30px 15px;
-">
+<div class="privacy-modal" id="privacyModal">
 
-  <div style="
-  background:white;
-  max-width:950px;
-  margin:auto;
-  border-radius:28px;
-  padding:45px;
-  position:relative;
-  color:#222;
-  line-height:1.9;
-  animation:fadeModal 0.35s ease;
-  ">
+  <div class="privacy-content">
 
-    <span onclick="cerrarAviso()" style="
-    position:absolute;
-    top:18px;
-    right:25px;
-    font-size:40px;
-    cursor:pointer;
-    color:#666;
-    ">
-    &times;
+    <span class="close-modal" onclick="cerrarAviso()">
+      ✕
     </span>
 
-    <h2 style="
-    font-size:40px;
-    margin-bottom:10px;
-    ">
-    Aviso de Privacidad
-    </h2>
+    <h2>AVISO DE PRIVACIDAD INMOBILIARIO</h2>
 
-    <h3 style="
-    margin-bottom:30px;
-    color:#128C7E;
-    ">
-    RojAlm Asesores
-    </h3>
+    <h3>RojAlm Asesores</h3>
 
     <p>
-    En cumplimiento con la Ley Federal de Protección de Datos Personales
-    en Posesión de los Particulares, RojAlm Asesores pone a su disposición
-    el presente Aviso de Privacidad.
+    En atención a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares,
+    RojAlm Asesores pone a disposición el presente Aviso de Privacidad con el objetivo de informarle
+    el tratamiento que se dará a los datos personales proporcionados por nuestros clientes, prospectos
+    y usuarios interesados en servicios de comercialización inmobiliaria.
     </p>
 
-    <h3>Datos personales que se recaban</h3>
+    <h4>1. Responsable de sus datos personales</h4>
 
-    <ul style="padding-left:22px;">
+    <p>
+    RojAlm Asesores es responsable del uso, manejo y protección de sus datos personales,
+    comprometidos en todo momento con la confidencialidad, seguridad y privacidad de la información proporcionada.
+    </p>
 
+    <h4>2. Datos que podremos solicitar</h4>
+
+    <ul>
       <li>Nombre completo</li>
-      <li>Número telefónico</li>
+      <li>Fecha de nacimiento</li>
+      <li>Número telefónico y WhatsApp</li>
       <li>Correo electrónico</li>
-      <li>Domicilio</li>
+      <li>Ciudad o domicilio</li>
+      <li>Información relacionada con inmuebles</li>
+      <li>Datos fiscales para facturación</li>
       <li>Información financiera o crediticia</li>
-      <li>Datos relacionados con compra, venta o renta de inmuebles</li>
-
     </ul>
 
-    <h3 style="margin-top:28px;">
-    Finalidad del uso de los datos
-    </h3>
+    <h4>3. Finalidad del uso de la información</h4>
 
-    <ul style="padding-left:22px;">
-
-      <li>Brindar asesoría inmobiliaria</li>
+    <ul>
+      <li>Brindar asesoría inmobiliaria personalizada</li>
       <li>Dar seguimiento a solicitudes</li>
-      <li>Promover propiedades y servicios</li>
-      <li>Elaborar contratos y expedientes</li>
-
+      <li>Promover propiedades en venta o renta</li>
+      <li>Coordinar citas y negociaciones</li>
+      <li>Elaborar contratos y documentación</li>
+      <li>Gestionar trámites inmobiliarios</li>
+      <li>Mantener comunicación vía llamada, correo o WhatsApp</li>
     </ul>
 
-    <h3 style="margin-top:28px;">
-    Protección de la información
-    </h3>
+    <h4>4. Confidencialidad y protección</h4>
 
     <p>
-    RojAlm Asesores implementa medidas de seguridad administrativas,
-    técnicas y físicas para proteger sus datos personales.
+    RojAlm Asesores implementa medidas de seguridad físicas, administrativas y digitales
+    para proteger su información personal y evitar accesos no autorizados.
     </p>
 
-    <h3 style="margin-top:28px;">
-    Derechos ARCO
-    </h3>
+    <h4>5. Compartición de información</h4>
 
     <p>
-    Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento
-    de sus datos personales.
+    Sus datos podrán ser compartidos únicamente cuando sea necesario para la operación inmobiliaria con:
     </p>
 
-    <h3 style="margin-top:28px;">
-    Contacto
-    </h3>
+    <ul>
+      <li>Instituciones bancarias</li>
+      <li>Notarías públicas</li>
+      <li>Desarrolladores inmobiliarios</li>
+      <li>Dependencias gubernamentales</li>
+      <li>Empresas de avalúos o gestoría</li>
+    </ul>
+
+    <h4>6. Derechos del titular</h4>
 
     <p>
-    <strong>RojAlm Asesores</strong><br><br>
+    Usted podrá solicitar acceso, corrección, cancelación u oposición al uso de sus datos personales.
+    </p>
 
-    📱 WhatsApp: 8116027856
+    <h4>7. Uso de plataformas digitales</h4>
+
+    <p>
+    La información compartida mediante formularios web, redes sociales, correo electrónico,
+    llamadas telefónicas o WhatsApp será tratada conforme a este Aviso de Privacidad.
+    </p>
+
+    <h4>8. Cambios al aviso de privacidad</h4>
+
+    <p>
+    RojAlm Asesores podrá actualizar el presente Aviso de Privacidad en cualquier momento.
+    </p>
+
+    <h4>9. Aceptación</h4>
+
+    <p>
+    Al proporcionar sus datos personales y utilizar nuestros servicios,
+    usted acepta los términos establecidos en el presente Aviso de Privacidad.
+    </p>
+
+    <h4>10. Contacto</h4>
+
+    <p>
+    • Correo electrónico: rojalmasesores@gmail.com<br><br>
+    • Teléfono / WhatsApp: 81 1602 7856
+    </p>
+
+    <p style="margin-top:30px;opacity:.7;">
+      Última actualización: Mayo 2025
     </p>
 
   </div>
 
 </div>
 
+<style>
+
+.privacy-section{
+  padding:80px 20px;
+  background:#0f0f0f;
+}
+
+.privacy-card{
+  max-width:900px;
+  margin:auto;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(12px);
+  border-radius:28px;
+  padding:50px 35px;
+  text-align:center;
+  color:white;
+  box-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+
+.privacy-card h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.privacy-card p{
+  font-size:18px;
+  line-height:1.8;
+  opacity:.88;
+}
+
+.privacy-btn{
+  margin-top:35px;
+  padding:16px 34px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ffffff,#d9d9d9);
+  color:#111;
+  font-weight:bold;
+  font-size:17px;
+  cursor:pointer;
+  transition:.35s;
+  box-shadow:0 8px 25px rgba(255,255,255,0.18);
+}
+
+.privacy-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+.privacy-modal{
+  display:none;
+  position:fixed;
+  z-index:99999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  background:rgba(0,0,0,.82);
+  padding:20px;
+}
+
+.privacy-content{
+  background:#fff;
+  color:#111;
+  max-width:900px;
+  margin:40px auto;
+  border-radius:28px;
+  padding:45px;
+  position:relative;
+  animation:fadeUp .4s ease;
+}
+
+.privacy-content h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.privacy-content h3{
+  margin-bottom:30px;
+  opacity:.7;
+}
+
+.privacy-content h4{
+  margin-top:28px;
+  margin-bottom:12px;
+  font-size:22px;
+}
+
+.privacy-content p,
+.privacy-content li{
+  line-height:1.9;
+  font-size:17px;
+}
+
+.privacy-content ul{
+  padding-left:20px;
+}
+
+.close-modal{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font-size:30px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .privacy-card{
+    padding:35px 22px;
+  }
+
+  .privacy-card h2{
+    font-size:30px;
+  }
+
+  .privacy-content{
+    padding:28px 22px;
+  }
+
+  .privacy-content h2{
+    font-size:28px;
+  }
+
+}
+
+</style>
+
 <script>
 
 function abrirAviso(){
-  document.getElementById("modalAviso").style.display="block";
+  document.getElementById("privacyModal").style.display = "block";
 }
 
 function cerrarAviso(){
-  document.getElementById("modalAviso").style.display="none";
+  document.getElementById("privacyModal").style.display = "none";
 }
 
 window.onclick = function(event){
 
-  let modal = document.getElementById("modalAviso");
+  const modal = document.getElementById("privacyModal");
 
   if(event.target == modal){
     modal.style.display = "none";
@@ -1082,41 +1171,3 @@ window.onclick = function(event){
 }
 
 </script>
-
-<style>
-
-@keyframes fadeModal{
-
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
-@media(max-width:768px){
-
-  #modalAviso div{
-    padding:28px 22px !important;
-  }
-
-  #modalAviso h2{
-    font-size:30px !important;
-  }
-
-  #modalAviso p,
-  #modalAviso li{
-    font-size:16px !important;
-  }
-
-}
-
-</style>
-
-</body>
-</html>
