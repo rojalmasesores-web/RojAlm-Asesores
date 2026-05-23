@@ -99,7 +99,7 @@ header img{
 
 .slides{
 display:flex;
-width:800%;
+width:1000%;
 
 animation:slide 45s infinite ease-in-out;
 
@@ -200,36 +200,44 @@ transition:transform .6s ease;
 }
 @keyframes slide{
 
-  0%,10%{
+  0%,8%{
     transform:translateX(0%);
   }
 
-  12%,22%{
-    transform:translateX(-12.5%);
+  10%,18%{
+    transform:translateX(-10%);
   }
 
-  24%,34%{
-    transform:translateX(-25%);
+  20%,28%{
+    transform:translateX(-20%);
   }
 
-  36%,46%{
-    transform:translateX(-37.5%);
+  30%,38%{
+    transform:translateX(-30%);
   }
 
-  48%,58%{
+  40%,48%{
+    transform:translateX(-40%);
+  }
+
+  50%,58%{
     transform:translateX(-50%);
   }
 
-  60%,70%{
-    transform:translateX(-62.5%);
+  60%,68%{
+    transform:translateX(-60%);
   }
 
-  72%,82%{
-    transform:translateX(-75%);
+  70%,78%{
+    transform:translateX(-70%);
   }
 
-  84%,94%{
-    transform:translateX(-87.5%);
+  80%,88%{
+    transform:translateX(-80%);
+  }
+
+  90%,98%{
+    transform:translateX(-90%);
   }
 
   100%{
@@ -237,7 +245,6 @@ transition:transform .6s ease;
   }
 
 }
-
 @keyframes fadeUp{
 
   from{
@@ -784,8 +791,55 @@ transition:transform .6s ease;
       </div>
 
     </div>
-
     <!-- SLIDE 8 -->
+
+    <div class="slide">
+
+      <img src="henar.jpeg">
+
+      <div class="slide-text">
+
+        <h2>Residencias Premium en Santiago</h2>
+
+        <p>Desde $14 MDP*</p>
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20las%20residencias%20premium%20en%20Santiago"
+        target="_blank">
+
+        Solicitar información
+
+        </a>
+
+      </div>
+
+    </div>
+    <!-- SLIDE 9 -->
+
+    <div class="slide">
+
+      <img src="plano.png">
+
+      <div class="slide-text">
+
+        <h2>Terrenos Residencial-Campestre Montemorelos</h2>
+
+        <p>Desde $1.5 MDP*</p>
+
+        <a class="btn"
+        href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20lterrenos%20residenciale%20-campestre%20en%20Montemorelos"
+        target="_blank">
+
+        Solicitar información
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- SLIDE 10 -->
 
     <div class="slide">
 
@@ -970,6 +1024,49 @@ transition:transform .6s ease;
     </div>
 
   </div>
+<div class="card">
+
+    <img src="henar.jpeg">
+
+    <div class="card-content">
+
+      <h3>Residencias Premium en Santiago</h3>
+
+      <p>Desde $14 MDP*</p>
+
+      <a class="btn"
+      href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20las%20residencias%20premium%20en%20Santiago"
+      target="_blank">
+
+      Solicitar información
+
+      </a>
+
+    </div>
+
+  </div>
+<div class="card">
+
+<img src="plano.png">
+
+<div class="card-content">
+
+<h3>Terrenos Residencial-Campestre Montemorelos</h3>
+
+<p>Solicita información</p>
+
+<a class="btn"
+href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Montemorelos"
+target="_blank">
+
+Más información
+
+</a>
+
+</div>
+
+</div>
+
 
   <div class="card">
 
@@ -1487,7 +1584,7 @@ let currentSlide = 0;
 
 const slides = document.getElementById("slides");
 
-const totalSlides = 8;
+const totalSlides = 10;
 
 function moverSlide(direction){
 
@@ -1504,9 +1601,10 @@ function moverSlide(direction){
   slides.style.animation = "none";
 
   slides.style.transform =
-  `translateX(-${currentSlide * 12.5}%)`;
+  `translateX(-${currentSlide * 10}%)`;
 
 }
 </script>
+
 
 
