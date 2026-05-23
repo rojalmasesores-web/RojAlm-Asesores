@@ -64,23 +64,23 @@ header img{
   opacity:0.85;
 }
 
-/* BUTTON */
+/* BOTONES */
 
 .btn{
   display:inline-block;
-  margin-top:30px;
+  margin-top:25px;
   padding:16px 34px;
   background:#25D366;
   color:white;
   text-decoration:none;
-  border-radius:12px;
+  border-radius:14px;
   font-weight:bold;
   transition:.35s;
 }
 
 .btn:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 12px 30px rgba(37,211,102,0.45);
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(37,211,102,0.4);
 }
 
 /* CARRUSEL */
@@ -118,11 +118,11 @@ header img{
   color:white;
   padding:30px;
   border-radius:25px;
-  animation:fadeUp 1.8s ease;
+  max-width:500px;
 }
 
 .slide-text h2{
-  font-size:44px;
+  font-size:42px;
   margin-bottom:10px;
 }
 
@@ -167,20 +167,6 @@ header img{
 
   100%{
     transform:translateX(0%);
-  }
-
-}
-
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
   }
 
 }
@@ -253,7 +239,6 @@ header img{
   padding:40px 30px;
   border-radius:24px;
   transition:.35s;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .benefit-card:hover{
@@ -273,16 +258,16 @@ header img{
 /* PRESENTACIÓN */
 
 .about-section{
-  padding:80px 20px;
-  background:#f7f7f7;
+  padding:100px 20px;
+  background:#f8f8f8;
 }
 
 .about-card{
-  max-width:950px;
+  max-width:900px;
   margin:auto;
   background:white;
   border-radius:28px;
-  padding:55px 40px;
+  padding:60px 40px;
   text-align:center;
   box-shadow:0 10px 40px rgba(0,0,0,0.12);
 }
@@ -294,7 +279,7 @@ header img{
 
 .about-card p{
   font-size:20px;
-  line-height:1.9;
+  line-height:1.8;
   opacity:.8;
 }
 
@@ -336,24 +321,23 @@ header img{
   border-radius:28px;
   padding:45px;
   position:relative;
-  animation:fadeUp .4s ease;
 }
 
 .about-content h2{
   font-size:38px;
-  margin-bottom:10px;
+  margin-bottom:25px;
 }
 
 .about-content h3{
-  margin-top:28px;
+  margin-top:30px;
   margin-bottom:12px;
-  font-size:24px;
+  font-size:26px;
 }
 
 .about-content p,
 .about-content li{
   line-height:1.9;
-  font-size:17px;
+  font-size:18px;
 }
 
 .about-content ul{
@@ -385,7 +369,7 @@ header img{
   opacity:0.75;
 }
 
-/* PRIVACY */
+/* PRIVACIDAD */
 
 .privacy-section{
   padding:80px 20px;
@@ -447,17 +431,37 @@ header img{
   position:relative;
 }
 
+.privacy-content h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.privacy-content h3{
+  margin-bottom:30px;
+}
+
+.privacy-content h4{
+  margin-top:28px;
+  margin-bottom:12px;
+  font-size:22px;
+}
+
+.privacy-content p,
+.privacy-content li{
+  line-height:1.9;
+  font-size:17px;
+}
+
+.privacy-content ul{
+  padding-left:20px;
+}
+
 .close-modal{
   position:absolute;
   top:18px;
   right:22px;
   font-size:30px;
   cursor:pointer;
-}
-
-.privacy-content h4{
-  margin-top:28px;
-  margin-bottom:12px;
 }
 
 /* WHATSAPP */
@@ -518,21 +522,26 @@ header img{
     padding:50px 20px;
   }
 
-  .benefits h2,
-  .catalogo h2,
-  .privacy-card h2,
-  .about-card h2{
-    font-size:30px;
-  }
-
   .about-card,
   .privacy-card{
     padding:35px 22px;
   }
 
+  .about-card h2,
+  .privacy-card h2,
+  .benefits h2,
+  .catalogo h2{
+    font-size:30px;
+  }
+
   .about-content,
   .privacy-content{
     padding:28px 22px;
+  }
+
+  .about-content h2,
+  .privacy-content h2{
+    font-size:28px;
   }
 
 }
@@ -558,7 +567,7 @@ header img{
   </p>
 
   <a class="btn"
-  href="https://wa.me/528116027856"
+  href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20una%20propiedad"
   target="_blank">
 
   Contactar por WhatsApp
@@ -566,6 +575,8 @@ header img{
   </a>
 
 </section>
+
+<!-- CARRUSEL -->
 
 <section class="slider">
 
@@ -576,6 +587,9 @@ header img{
       <div class="slide-text">
         <h2>Casa en Guadalupe</h2>
         <p>Desde $3 MDP*</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar información
+        </a>
       </div>
     </div>
 
@@ -584,6 +598,9 @@ header img{
       <div class="slide-text">
         <h2>Casa en Apodaca</h2>
         <p>Desde $3.5 MDP*</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar información
+        </a>
       </div>
     </div>
 
@@ -592,6 +609,9 @@ header img{
       <div class="slide-text">
         <h2>Casa en García</h2>
         <p>Desde $2.4 MDP*</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar información
+        </a>
       </div>
     </div>
 
@@ -600,6 +620,9 @@ header img{
       <div class="slide-text">
         <h2>Casa en Cumbres</h2>
         <p>Desde $7.5 MDP*</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar información
+        </a>
       </div>
     </div>
 
@@ -608,6 +631,9 @@ header img{
       <div class="slide-text">
         <h2>Departamentos Sta. Catarina</h2>
         <p>Desde $5 MDP*</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar información
+        </a>
       </div>
     </div>
 
@@ -616,6 +642,9 @@ header img{
       <div class="slide-text">
         <h2>Departamentos Sur Mty</h2>
         <p>Desde $4 MDP*</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar información
+        </a>
       </div>
     </div>
 
@@ -624,6 +653,9 @@ header img{
       <div class="slide-text">
         <h2>Terrenos Carretera Nacional</h2>
         <p>Desde $2.5 MDP*</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar información
+        </a>
       </div>
     </div>
 
@@ -632,12 +664,17 @@ header img{
       <div class="slide-text">
         <h2>Busco otra ubicación</h2>
         <p>Asesoría personalizada</p>
+        <a class="btn" href="https://wa.me/528116027856" target="_blank">
+        Solicitar asesoría
+        </a>
       </div>
     </div>
 
   </div>
 
 </section>
+
+<!-- BENEFICIOS -->
 
 <section class="benefits">
 
@@ -647,22 +684,30 @@ header img{
 
     <div class="benefit-card">
       <h3>✔ Atención Personalizada</h3>
-      <p>Te acompañamos en cada paso.</p>
+      <p>
+        Te acompañamos en cada paso para encontrar la propiedad ideal.
+      </p>
     </div>
 
     <div class="benefit-card">
       <h3>✔ Alta Plusvalía</h3>
-      <p>Propiedades con gran crecimiento.</p>
+      <p>
+        Propiedades ubicadas en zonas con gran crecimiento y valor.
+      </p>
     </div>
 
     <div class="benefit-card">
       <h3>✔ Asesoría Financiera</h3>
-      <p>Te ayudamos con créditos y trámites.</p>
+      <p>
+        Te ayudamos con Infonavit, Cofinavit y crédito bancario.
+      </p>
     </div>
 
   </div>
 
 </section>
+
+<!-- PRESENTACIÓN -->
 
 <section class="about-section">
 
@@ -671,8 +716,9 @@ header img{
     <h2>Conoce RojAlm Asesores</h2>
 
     <p>
-      Somos una agencia inmobiliaria especializada en ayudarte
-      a encontrar la propiedad ideal en Nuevo León.
+      Somos una firma inmobiliaria enfocada en brindar atención personalizada,
+      asesoría profesional y acompañamiento integral para ayudarte a encontrar
+      la propiedad ideal en Nuevo León.
     </p>
 
     <button class="about-btn" onclick="abrirPresentacion()">
@@ -682,6 +728,8 @@ header img{
   </div>
 
 </section>
+
+<!-- MODAL PRESENTACIÓN -->
 
 <div class="about-modal" id="aboutModal">
 
@@ -694,47 +742,47 @@ header img{
     <h2>RojAlm Asesores</h2>
 
     <p>
-      En RojAlm Asesores creemos que adquirir una propiedad
-      es una decisión que transforma vidas.
+      RojAlm Asesores es una firma inmobiliaria liderada por Mike Rojas,
+      especializada en la comercialización de propiedades residenciales,
+      departamentos y terrenos en las mejores zonas de Nuevo León.
     </p>
 
-    <h3>¿Quiénes somos?</h3>
+    <h3>Nuestra misión</h3>
 
     <p>
-      Agencia inmobiliaria liderada por Mike Rojas desde 2020.
+      Ayudar a cada cliente a tomar decisiones inmobiliarias seguras,
+      inteligentes y rentables mediante asesoría profesional y atención personalizada.
     </p>
 
-    <h3>Misión</h3>
+    <h3>Nuestra visión</h3>
 
     <p>
-      Brindar asesoría inmobiliaria profesional y transparente.
-    </p>
-
-    <h3>Visión</h3>
-
-    <p>
-      Ser una inmobiliaria de referencia en Nuevo León.
+      Convertirnos en una inmobiliaria referente en confianza,
+      profesionalismo y resultados en el mercado inmobiliario.
     </p>
 
     <h3>Valores</h3>
 
     <ul>
-      <li>✔ Honestidad</li>
-      <li>✔ Profesionalismo</li>
-      <li>✔ Transparencia</li>
-      <li>✔ Atención personalizada</li>
+      <li>Compromiso</li>
+      <li>Confianza</li>
+      <li>Transparencia</li>
+      <li>Atención personalizada</li>
+      <li>Profesionalismo</li>
     </ul>
 
   </div>
 
 </div>
 
+<!-- CTA -->
+
 <section class="catalogo">
 
   <h2>Ver más propiedades</h2>
 
   <p>
-    Agenda hoy tu asesoría personalizada.
+    Agenda hoy tu asesoría personalizada y encuentra la propiedad ideal para ti.
   </p>
 
   <a class="btn"
@@ -747,6 +795,8 @@ header img{
 
 </section>
 
+<!-- AVISO -->
+
 <section class="privacy-section">
 
   <div class="privacy-card">
@@ -754,7 +804,7 @@ header img{
     <h2>Aviso de Privacidad</h2>
 
     <p>
-      Protegemos la información de nuestros clientes y prospectos.
+      En RojAlm Asesores protegemos la información de nuestros clientes.
     </p>
 
     <button class="privacy-btn" onclick="abrirAviso()">
@@ -765,6 +815,8 @@ header img{
 
 </section>
 
+<!-- MODAL PRIVACIDAD -->
+
 <div class="privacy-modal" id="privacyModal">
 
   <div class="privacy-content">
@@ -773,23 +825,27 @@ header img{
       ✕
     </span>
 
-    <h2>AVISO DE PRIVACIDAD</h2>
+    <h2>Aviso de Privacidad</h2>
+
+    <h3>RojAlm Asesores</h3>
 
     <p>
-      RojAlm Asesores protege la información personal
-      proporcionada por sus clientes y usuarios.
+      Tus datos personales serán utilizados únicamente para fines relacionados
+      con servicios inmobiliarios y atención personalizada.
     </p>
 
     <h4>Contacto</h4>
 
     <p>
-      rojalmasesores@gmail.com<br><br>
+      Correo: rojalmasesores@gmail.com<br><br>
       WhatsApp: 81 1602 7856
     </p>
 
   </div>
 
 </div>
+
+<!-- WHATSAPP -->
 
 <a class="whatsapp-float"
 href="https://wa.me/528116027856"
