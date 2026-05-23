@@ -469,16 +469,7 @@ transition:transform .6s ease;
 
   width:70px;
   height:70px;
-.about-content{
-background:#fff;
-color:#111;
-max-width:950px;
-margin:40px auto;
-border-radius:28px;
-padding:45px;
-position:relative;
-animation:fadeUp .4s ease;
-}
+
   background:#B3001B;
 
   border-radius:50%;
@@ -2011,89 +2002,6 @@ Solicitar información
 </style>
 
 <script>
-function abrirImagen(src){
-
-  const modal = document.getElementById("imageModal");
-  const imagen = document.getElementById("imagenGrande");
-
-  imagen.src = src;
-  modal.style.display = "flex";
-
-}
-
-function cerrarImagen(){
-
-  document.getElementById("imageModal").style.display = "none";
-  document.getElementById("imagenGrande").src = "";
-
-}
-
-function cerrarImagen(){
-
-  document.getElementById("imageModal").style.display = "none";
-
-}
-
-function abrirAviso(){
-  document.getElementById("privacyModal").style.display = "block";
-}
-
-function cerrarAviso(){
-  document.getElementById("privacyModal").style.display = "none";
-}
-
-window.onclick = function(event){
-
-  const modal = document.getElementById("privacyModal");
-
-  if(event.target == modal){
-    modal.style.display = "none";
-  }
-
-}
-function abrirPresentacion(){
-  document.getElementById("aboutModal").style.display = "block";
-}
-
-function cerrarPresentacion(){
-  document.getElementById("aboutModal").style.display = "none";
-}
-
-window.addEventListener("click", function(event){
-
-  const aboutModal = document.getElementById("aboutModal");
-
-  if(event.target == aboutModal){
-    aboutModal.style.display = "none";
-  }
-
-});
-/* CARRUSEL MANUAL */
-
-let currentSlide = 0;
-
-const slides = document.getElementById("slides");
-
-const totalSlides = 10;
-
-function moverSlide(direction){
-
-  currentSlide += direction;
-
-  if(currentSlide < 0){
-    currentSlide = totalSlides - 1;
-  }
-
-  if(currentSlide >= totalSlides){
-    currentSlide = 0;
-  }
-
-  slides.style.animation = "none";
-
-  slides.style.transform =
-  `translateX(-${currentSlide * 10}%)`;
-
-}
 <footer style="
 padding:30px;
 text-align:center;
@@ -2105,19 +2013,86 @@ border-top:1px solid rgba(255,255,255,.08);
 © 2026 RojAlm Asesores | Tu patrimonio merece una asesoría confiable
 
 </footer>
+
+<script>
+function abrirImagen(src){
+  const modal = document.getElementById("imageModal");
+  const imagen = document.getElementById("imagenGrande");
+
+  imagen.src = src;
+  modal.style.display = "flex";
+}
+
+function cerrarImagen(){
+  document.getElementById("imageModal").style.display = "none";
+  document.getElementById("imagenGrande").src = "";
+}
+
+function abrirAviso(){
+  document.getElementById("privacyModal").style.display = "block";
+}
+
+function cerrarAviso(){
+  document.getElementById("privacyModal").style.display = "none";
+}
+
+function abrirPresentacion(){
+  document.getElementById("aboutModal").style.display = "block";
+}
+
+function cerrarPresentacion(){
+  document.getElementById("aboutModal").style.display = "none";
+}
+
+/* CARRUSEL MANUAL */
+
+let currentSlide = 0;
+const slides = document.getElementById("slides");
+const totalSlides = 10;
+
+function moverSlide(direction){
+  currentSlide += direction;
+
+  if(currentSlide < 0){
+    currentSlide = totalSlides - 1;
+  }
+
+  if(currentSlide >= totalSlides){
+    currentSlide = 0;
+  }
+
+  slides.style.animation = "none";
+  slides.style.transform = `translateX(-${currentSlide * 10}%)`;
+}
+
+/* CERRAR MODALES AL DAR CLIC FUERA */
+
+window.addEventListener("click", function(event){
+
+  const privacyModal = document.getElementById("privacyModal");
+  const aboutModal = document.getElementById("aboutModal");
+  const imageModal = document.getElementById("imageModal");
+
+  if(event.target === privacyModal){
+    cerrarAviso();
+  }
+
+  if(event.target === aboutModal){
+    cerrarPresentacion();
+  }
+
+  if(event.target === imageModal){
+    cerrarImagen();
+  }
+
+});
 </script>
+
 <!-- VISOR DE IMAGEN -->
 
 <div class="image-modal" id="imageModal">
 
   <span class="close-image" onclick="cerrarImagen()">
-document.getElementById("imageModal").addEventListener("click", function(event){
-
-  if(event.target === this){
-    cerrarImagen();
-  }
-
-});
     ✕
   </span>
 
@@ -2125,10 +2100,5 @@ document.getElementById("imageModal").addEventListener("click", function(event){
 
 </div>
 
-
-
-
-
-
-
-
+</body>
+</html>
