@@ -513,11 +513,22 @@ transition:transform .6s ease;
 .about-card{
   max-width:950px;
   margin:auto;
-  background:white;
+
+  background:rgba(255,255,255,0.92);
+
   border-radius:28px;
+
   padding:60px 40px;
+
   text-align:center;
+
   box-shadow:0 10px 40px rgba(0,0,0,0.12);
+
+  backdrop-filter:blur(12px);
+
+  border:1px solid rgba(255,255,255,0.35);
+
+  color:#111;
 }
 
 .about-card h2{
@@ -528,7 +539,13 @@ transition:transform .6s ease;
 .about-card p{
   font-size:20px;
   line-height:1.8;
-  opacity:.8;
+
+  color:#222;
+
+  opacity:1;
+}
+.about-card h2{
+  color:#000;
 }
 
 .about-btn{
