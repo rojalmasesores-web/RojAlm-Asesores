@@ -3,84 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>RojAlm Asesores</title>
 
 <style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   font-family:Arial,sans-serif;
   background:
-  radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 25%),
-  radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 25%),
-  linear-gradient(135deg,#0a0a0a,#111111,#181818);
+    radial-gradient(circle at top left,rgba(255,255,255,.05),transparent 25%),
+    radial-gradient(circle at bottom right,rgba(255,255,255,.04),transparent 25%),
+    linear-gradient(135deg,#0a0a0a,#111,#181818);
   color:#f5f5f5;
   overflow-x:hidden;
 }
-
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:linear-gradient(rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  background:linear-gradient(rgba(255,255,255,.02),rgba(255,255,255,.01));
   pointer-events:none;
   z-index:-1;
 }
-
-/* HEADER */
-
 header{
   position:fixed;
   width:100%;
   top:0;
   left:0;
   z-index:1000;
-  background:rgba(0,0,0,0.75);
+  background:rgba(0,0,0,.75);
   backdrop-filter:blur(10px);
   padding:15px;
   text-align:center;
 }
-
-header img{
-  width:140px;
-}
-
-/* HERO */
-
+header img{width:140px}
 .hero{
-  background:
-  linear-gradient(135deg,rgba(0,0,0,.88),rgba(20,20,20,.92)),
-  url('henar.jpeg');
+  background:linear-gradient(135deg,rgba(0,0,0,.88),rgba(20,20,20,.92)),url('henar.jpeg');
   background-size:cover;
   background-position:center;
   color:white;
   text-align:center;
   padding:160px 20px 90px;
 }
-
-.hero h1{
-  font-size:54px;
-  margin-bottom:20px;
-  line-height:1.1;
-}
-
-.hero p{
-  font-size:22px;
-  opacity:0.85;
-}
-
-/* BOTONES */
-
+.hero h1{font-size:54px;margin-bottom:20px;line-height:1.1}
+.hero p{font-size:22px;opacity:.85}
 .btn{
   display:inline-block;
   margin-top:30px;
@@ -90,66 +56,47 @@ header img{
   text-decoration:none;
   border-radius:12px;
   font-weight:bold;
-  transition:0.35s;
+  transition:.35s;
 }
-
 .btn:hover{
   transform:translateY(-3px) scale(1.03);
-  box-shadow:0 12px 30px rgba(179,0,27,0.45);
+  box-shadow:0 12px 30px rgba(179,0,27,.45);
 }
-
-/* CARRUSEL */
-
 .slider{
   width:100%;
   overflow:hidden;
   position:relative;
 }
-
 .slides{
   display:flex;
-  width:1000%;
   transition:transform .6s ease;
 }
-
 .slide{
-  width:10%;
-  flex:0 0 10%;
+  min-width:100%;
   position:relative;
 }
-
 .slide img{
   width:100%;
   height:650px;
   object-fit:cover;
-  filter:brightness(0.68);
+  filter:brightness(.68);
   transform:scale(1.05);
-  transition:8s ease;
   cursor:pointer;
 }
-
 .slide-text{
   position:absolute;
   left:50px;
   bottom:50px;
-  background:rgba(255,255,255,0.12);
+  max-width:min(820px,calc(100% - 100px));
+  background:rgba(255,255,255,.12);
   backdrop-filter:blur(10px);
   color:white;
   padding:30px;
   border-radius:25px;
   animation:fadeUp 1.8s ease;
 }
-
-.slide-text h2{
-  font-size:44px;
-  margin-bottom:10px;
-}
-
-.slide-text p{
-  font-size:22px;
-  margin-bottom:15px;
-}
-
+.slide-text h2{font-size:44px;margin-bottom:10px}
+.slide-text p{font-size:22px;margin-bottom:15px}
 .slider-btn{
   position:absolute;
   top:50%;
@@ -166,34 +113,16 @@ header img{
   backdrop-filter:blur(6px);
   transition:.3s;
 }
-
 .slider-btn:hover{
   background:#B3001B;
   transform:translateY(-50%) scale(1.08);
 }
-
-.prev-btn{
-  left:20px;
-}
-
-.next-btn{
-  right:20px;
-}
-
+.prev-btn{left:20px}
+.next-btn{right:20px}
 @keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+  from{opacity:0;transform:translateY(50px)}
+  to{opacity:1;transform:translateY(0)}
 }
-
-/* NOTA PRECIOS */
-
 .nota-precios{
   text-align:center;
   font-size:14px;
@@ -206,35 +135,27 @@ header img{
   border-radius:8px;
   letter-spacing:.3px;
 }
-
-/* GRID PROPIEDADES */
-
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:30px;
   padding:90px 40px;
 }
-
 .card{
-  background:rgba(255,255,255,0.05);
+  background:rgba(255,255,255,.05);
   backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,.08);
   border-top:3px solid #B3001B;
   border-radius:24px;
   overflow:hidden;
-  box-shadow:0 12px 35px rgba(0,0,0,0.12);
-  transition:0.35s;
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+  transition:.35s;
 }
-
 .card:hover{
   transform:translateY(-10px) scale(1.02);
-  box-shadow:
-  0 20px 45px rgba(0,0,0,.45),
-  0 0 25px rgba(179,0,27,.20);
+  box-shadow:0 20px 45px rgba(0,0,0,.45),0 0 25px rgba(179,0,27,.20);
   border-color:rgba(179,0,27,.35);
 }
-
 .card img{
   width:100%;
   height:250px;
@@ -242,82 +163,44 @@ header img{
   cursor:pointer;
   transition:.35s;
 }
-
-.card img:hover{
-  transform:scale(1.03);
-}
-
-.card-content{
-  padding:25px;
-}
-
-.card h3{
-  font-size:28px;
-  margin-bottom:10px;
-  color:white;
-}
-
-.card p{
-  font-size:20px;
-  color:#d4d4d4;
-  font-weight:bold;
-}
-
-/* BENEFICIOS */
-
+.card img:hover{transform:scale(1.03)}
+.card-content{padding:25px}
+.card h3{font-size:28px;margin-bottom:10px;color:white}
+.card p{font-size:20px;color:#d4d4d4;font-weight:bold}
 .benefits{
   background:#111;
   color:white;
   text-align:center;
   padding:100px 25px;
 }
-
-.benefits h2{
+.benefits h2,.catalogo h2{
   font-size:42px;
   margin-bottom:60px;
   color:#B3001B;
   text-transform:uppercase;
   letter-spacing:2px;
 }
-
 .benefits-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
 }
-
 .benefit-card{
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,.06);
   backdrop-filter:blur(8px);
   padding:40px 30px;
   border-radius:24px;
-  transition:0.35s;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transition:.35s;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
-
-.benefit-card:hover{
-  transform:translateY(-10px);
-}
-
-.benefit-card h3{
-  font-size:28px;
-  margin-bottom:15px;
-  color:#B3001B;
-}
-
-.benefit-card p{
-  line-height:1.8;
-  opacity:0.85;
-}
-
-/* PRESENTACIÓN */
-
+.benefit-card:hover{transform:translateY(-10px)}
+.benefit-card h3{font-size:28px;margin-bottom:15px;color:#B3001B}
+.benefit-card p{line-height:1.8;opacity:.85}
 .about-section{
   padding:100px 20px;
-  background:linear-gradient(135deg,#0a0a0a,#111111,#181818);
+  background:linear-gradient(135deg,#0a0a0a,#111,#181818);
 }
-
-.about-card{
+.about-card,.privacy-card{
   max-width:950px;
   margin:auto;
   background:linear-gradient(135deg,rgba(20,20,20,.98),rgba(35,35,35,.96));
@@ -325,61 +208,22 @@ header img{
   padding:60px 45px;
   text-align:center;
   color:#f5f5f5;
-  backdrop-filter:blur(18px);
   border:1px solid rgba(179,0,27,.35);
-  box-shadow:
-  0 15px 50px rgba(0,0,0,.65),
-  0 0 30px rgba(179,0,27,.18);
-  position:relative;
-  overflow:hidden;
+  box-shadow:0 15px 50px rgba(0,0,0,.65),0 0 30px rgba(179,0,27,.18);
 }
-
-.about-card::before{
-  content:"";
-  position:absolute;
-  width:350px;
-  height:350px;
-  top:-150px;
-  right:-150px;
-  border-radius:50%;
-  background:radial-gradient(rgba(179,0,27,.30), transparent 70%);
-  pointer-events:none;
-}
-
-.about-card::after{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  bottom:-100px;
-  left:-100px;
-  border-radius:50%;
-  background:radial-gradient(rgba(179,0,27,.18), transparent 70%);
-  pointer-events:none;
-}
-
-.about-card h2,
-.about-card p,
-.about-btn{
-  position:relative;
-  z-index:2;
-}
-
-.about-card h2{
+.about-card h2,.privacy-card h2{
   font-size:42px;
   margin-bottom:25px;
   color:#B3001B;
   text-transform:uppercase;
   letter-spacing:2px;
 }
-
-.about-card p{
+.about-card p,.privacy-card p{
   font-size:20px;
   line-height:1.9;
   color:#d7d7d7;
 }
-
-.about-btn{
+.about-btn,.privacy-btn{
   margin-top:35px;
   padding:16px 34px;
   border:none;
@@ -392,13 +236,11 @@ header img{
   transition:.35s;
   box-shadow:0 10px 25px rgba(179,0,27,.35);
 }
-
-.about-btn:hover{
+.about-btn:hover,.privacy-btn:hover{
   transform:translateY(-4px) scale(1.03);
   box-shadow:0 12px 35px rgba(179,0,27,.55);
 }
-
-.about-modal{
+.about-modal,.privacy-modal{
   display:none;
   position:fixed;
   z-index:99999;
@@ -410,8 +252,7 @@ header img{
   background:rgba(0,0,0,.82);
   padding:20px;
 }
-
-.about-content{
+.about-content,.privacy-content{
   background:linear-gradient(135deg,rgba(20,20,20,.98),rgba(35,35,35,.96));
   color:#f5f5f5;
   max-width:950px;
@@ -420,15 +261,10 @@ header img{
   padding:50px;
   position:relative;
   animation:fadeUp .4s ease;
-  backdrop-filter:blur(18px);
   border:1px solid rgba(179,0,27,.35);
-  box-shadow:
-  0 15px 50px rgba(0,0,0,.65),
-  0 0 30px rgba(179,0,27,.18);
-  overflow:hidden;
+  box-shadow:0 15px 50px rgba(0,0,0,.65),0 0 30px rgba(179,0,27,.18);
 }
-
-.about-content h2{
+.about-content h2,.privacy-content h2{
   font-size:40px;
   color:#B3001B;
   text-align:center;
@@ -436,8 +272,7 @@ header img{
   text-transform:uppercase;
   letter-spacing:2px;
 }
-
-.about-content h3{
+.about-content h3,.privacy-content h4{
   margin-top:35px;
   margin-bottom:15px;
   font-size:26px;
@@ -445,19 +280,13 @@ header img{
   border-left:4px solid #B3001B;
   padding-left:12px;
 }
-
-.about-content p,
-.about-content li{
+.about-content p,.about-content li,.privacy-content p,.privacy-content li{
   line-height:1.9;
   font-size:18px;
   color:#d7d7d7;
 }
-
-.about-content ul{
-  padding-left:20px;
-}
-
-.close-about{
+.about-content ul,.privacy-content ul{padding-left:20px}
+.close-about,.close-modal{
   position:absolute;
   top:18px;
   right:22px;
@@ -466,166 +295,23 @@ header img{
   cursor:pointer;
   transition:.35s;
 }
-
-.close-about:hover{
+.close-about:hover,.close-modal:hover{
   transform:rotate(90deg) scale(1.15);
   color:#ff334d;
 }
-
-/* CTA */
-
 .catalogo{
   text-align:center;
   padding:100px 20px;
 }
-
-.catalogo h2{
-  font-size:42px;
-  margin-bottom:15px;
-  color:#B3001B;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-
+.catalogo h2{margin-bottom:15px}
 .catalogo p{
   font-size:20px;
-  opacity:0.75;
+  opacity:.75;
 }
-
-/* AVISO PRIVACIDAD */
-
 .privacy-section{
   padding:80px 20px;
   background:#0f0f0f;
 }
-
-.privacy-card{
-  max-width:900px;
-  margin:auto;
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(12px);
-  border-radius:28px;
-  padding:50px 35px;
-  text-align:center;
-  color:white;
-  box-shadow:0 10px 40px rgba(0,0,0,0.35);
-}
-
-.privacy-card h2{
-  font-size:42px;
-  margin-bottom:20px;
-  color:#B3001B;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-
-.privacy-card p{
-  font-size:18px;
-  line-height:1.8;
-  opacity:.88;
-}
-
-.privacy-btn{
-  margin-top:35px;
-  padding:16px 34px;
-  border:none;
-  border-radius:14px;
-  background:#B3001B;
-  color:white;
-  font-weight:bold;
-  font-size:17px;
-  cursor:pointer;
-  transition:.35s;
-  box-shadow:0 8px 25px rgba(179,0,27,.35);
-}
-
-.privacy-btn:hover{
-  transform:translateY(-4px) scale(1.03);
-  box-shadow:0 12px 35px rgba(179,0,27,.55);
-}
-
-.privacy-modal{
-  display:none;
-  position:fixed;
-  z-index:99999;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  overflow:auto;
-  background:rgba(0,0,0,.82);
-  padding:20px;
-}
-
-.privacy-content{
-  background:linear-gradient(135deg,rgba(20,20,20,.98),rgba(35,35,35,.96));
-  color:#f5f5f5;
-  max-width:950px;
-  margin:40px auto;
-  border-radius:30px;
-  padding:50px;
-  position:relative;
-  animation:fadeUp .4s ease;
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(179,0,27,.35);
-  box-shadow:
-  0 15px 50px rgba(0,0,0,.65),
-  0 0 30px rgba(179,0,27,.18);
-  overflow:hidden;
-}
-
-.privacy-content h2{
-  font-size:40px;
-  color:#B3001B;
-  margin-bottom:15px;
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-
-.privacy-content h3{
-  text-align:center;
-  color:#d7d7d7;
-  margin-bottom:35px;
-}
-
-.privacy-content h4{
-  margin-top:35px;
-  margin-bottom:15px;
-  font-size:22px;
-  color:#B3001B;
-  border-left:4px solid #B3001B;
-  padding-left:12px;
-}
-
-.privacy-content p,
-.privacy-content li{
-  line-height:1.9;
-  font-size:17px;
-  color:#d7d7d7;
-}
-
-.privacy-content ul{
-  padding-left:20px;
-}
-
-.close-modal{
-  position:absolute;
-  top:18px;
-  right:22px;
-  color:#B3001B;
-  font-size:35px;
-  cursor:pointer;
-  transition:.35s;
-}
-
-.close-modal:hover{
-  transform:rotate(90deg) scale(1.15);
-  color:#ff334d;
-}
-
-/* VISOR IMAGEN */
-
 .image-modal{
   display:none;
   position:fixed;
@@ -639,16 +325,13 @@ header img{
   align-items:center;
   padding:20px;
 }
-
 .image-modal img{
   max-width:95%;
   max-height:95%;
   object-fit:contain;
   border-radius:20px;
   box-shadow:0 10px 40px rgba(0,0,0,.6);
-  animation:fadeUp .35s ease;
 }
-
 .close-image{
   position:absolute;
   top:20px;
@@ -658,104 +341,34 @@ header img{
   cursor:pointer;
   z-index:9999999;
 }
-
-/* WHATSAPP FLOTANTE */
-
-.whatsapp-float{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  width:70px;
-  height:70px;
-  background:#B3001B;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  text-decoration:none;
-  font-size:34px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.35);
-  z-index:999;
-  transition:0.3s;
+footer{
+  padding:30px;
+  text-align:center;
+  color:#777;
+  font-size:14px;
+  border-top:1px solid rgba(255,255,255,.08);
 }
-
-.whatsapp-float:hover{
-  transform:scale(1.1);
-}
-
-/* MOBILE */
-
 @media(max-width:768px){
-
-  .hero{
-    padding-top:140px;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .hero p{
-    font-size:18px;
-  }
-
-  .slide img{
-    height:420px;
-  }
-
+  .hero{padding-top:140px}
+  .hero h1{font-size:34px}
+  .hero p{font-size:18px}
+  .slide img{height:420px}
   .slide-text{
     left:20px;
     right:20px;
     bottom:20px;
+    max-width:none;
     padding:20px;
   }
-
-  .slide-text h2{
-    font-size:28px;
-  }
-
-  .slide-text p{
-    font-size:18px;
-  }
-
-  .benefits h2,
-  .catalogo h2{
-    font-size:32px;
-  }
-
-  .about-card{
-    padding:35px 22px;
-  }
-
-  .about-card h2{
-    font-size:30px;
-  }
-
-  .about-content,
-  .privacy-content{
-    padding:28px 22px;
-  }
-
-  .about-content h2,
-  .privacy-content h2{
-    font-size:28px;
-  }
-
-  .about-content h3{
-    font-size:24px;
-  }
-
-  .privacy-card{
-    padding:35px 22px;
-  }
-
-  .privacy-card h2{
-    font-size:30px;
-  }
-
+  .slide-text h2{font-size:28px}
+  .slide-text p{font-size:18px}
+  .benefits h2,.catalogo h2{font-size:32px}
+  .about-card,.privacy-card{padding:35px 22px}
+  .about-card h2,.privacy-card h2{font-size:30px}
+  .about-content,.privacy-content{padding:28px 22px}
+  .about-content h2,.privacy-content h2{font-size:28px}
+  .about-content h3,.privacy-content h4{font-size:24px}
 }
-
 </style>
 </head>
 
@@ -766,346 +379,78 @@ header img{
 </header>
 
 <section class="hero">
-
   <h1>Encuentra hoy la propiedad que cambiará tu vida</h1>
-
   <p>Casas, departamentos y terrenos en las mejores zonas</p>
-
-  <a class="btn"
-  href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20una%20propiedad"
-  target="_blank">
+  <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20informaci%C3%B3n%20de%20una%20propiedad" target="_blank">
     Contactar por WhatsApp
   </a>
-
 </section>
-
-<!-- CARRUSEL -->
 
 <section class="slider">
-
-  <button class="slider-btn prev-btn" type="button" onclick="moverSlide(-1)">❮</button>
-  <button class="slider-btn next-btn" type="button" onclick="moverSlide(1)">❯</button>
-
-  <div class="slides" id="slides">
-
-    <div class="slide">
-      <img src="casgpe.png" onclick="abrirImagen(this.src)" alt="Casa en Guadalupe">
-      <div class="slide-text">
-        <h2>Casa en Guadalupe</h2>
-        <p>Desde $3 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Guadalupe" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="casapo.png" onclick="abrirImagen(this.src)" alt="Casa en Apodaca">
-      <div class="slide-text">
-        <h2>Casa en Apodaca</h2>
-        <p>Desde $3.5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Apodaca" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="casgarT.png" onclick="abrirImagen(this.src)" alt="Casa en García">
-      <div class="slide-text">
-        <h2>Casa en García</h2>
-        <p>Desde $2.4 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20García" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="cascum.png" onclick="abrirImagen(this.src)" alt="Casa en Cumbres">
-      <div class="slide-text">
-        <h2>Casa en Cumbres</h2>
-        <p>Desde $7.5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Cumbres" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="depsta.png" onclick="abrirImagen(this.src)" alt="Departamentos Santa Catarina">
-      <div class="slide-text">
-        <h2>Departamentos Sta. Catarina</h2>
-        <p>Desde $5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Santa%20Catarina" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="depsur.jpg" onclick="abrirImagen(this.src)" alt="Departamentos Sur Monterrey">
-      <div class="slide-text">
-        <h2>Departamentos Sur Mty</h2>
-        <p>Desde $4 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Sur%20Monterrey" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="terrcar.png" onclick="abrirImagen(this.src)" alt="Terrenos Carretera Nacional">
-      <div class="slide-text">
-        <h2>Terrenos Residenciales Carretera Nacional</h2>
-        <p>Desde $2.5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Carretera%20Nacional" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="henar.jpeg" onclick="abrirImagen(this.src)" alt="Residencias Premium en Santiago">
-      <div class="slide-text">
-        <h2>Residencias Premium en Santiago</h2>
-        <p>Desde $14 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20las%20residencias%20premium%20en%20Santiago" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="plano.png" onclick="abrirImagen(this.src)" alt="Terrenos Montemorelos">
-      <div class="slide-text">
-        <h2>Terrenos Residencial-Campestre Montemorelos</h2>
-        <p>Desde $1.5 MDP*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20residencial%20campestre%20en%20Montemorelos" target="_blank">
-          Solicitar información
-        </a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="masroj.png" onclick="abrirImagen(this.src)" alt="Más opciones RojAlm">
-      <div class="slide-text">
-        <h2>Busco otra ubicación y/o presupuesto</h2>
-        <p>$*</p>
-        <a class="btn" href="https://wa.me/528116027856?text=Hola,%20busco%20otra%20ubicación%20y/o%20presupuesto" target="_blank">
-          Solicitar asesoría
-        </a>
-      </div>
-    </div>
-
-  </div>
-
+  <button class="slider-btn prev-btn" type="button" onclick="moverSlide(-1)">&#10094;</button>
+  <button class="slider-btn next-btn" type="button" onclick="moverSlide(1)">&#10095;</button>
+  <div class="slides" id="slides"></div>
 </section>
-
-<!-- PROPIEDADES -->
 
 <div class="nota-precios">
   * Los precios publicados son informativos y pueden cambiar sin previo aviso.
 </div>
 
-<section class="grid">
-
-  <div class="card">
-    <img src="casgpe.png" onclick="abrirImagen(this.src)" alt="Casa en Guadalupe">
-    <div class="card-content">
-      <h3>Casa en Guadalupe</h3>
-      <p>Desde $3 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Guadalupe" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="casapo.png" onclick="abrirImagen(this.src)" alt="Casa en Apodaca">
-    <div class="card-content">
-      <h3>Casa en Apodaca</h3>
-      <p>Desde $3.5 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Apodaca" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="casgarT.png" onclick="abrirImagen(this.src)" alt="Casa en García">
-    <div class="card-content">
-      <h3>Casa en García</h3>
-      <p>Desde $2.4 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20García" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="cascum.png" onclick="abrirImagen(this.src)" alt="Casa en Cumbres">
-    <div class="card-content">
-      <h3>Casa en Cumbres</h3>
-      <p>Desde $7.5 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20la%20casa%20en%20Cumbres" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="depsta.png" onclick="abrirImagen(this.src)" alt="Departamentos Santa Catarina">
-    <div class="card-content">
-      <h3>Departamentos Sta. Catarina</h3>
-      <p>Desde $5 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Santa%20Catarina" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="depsur.jpg" onclick="abrirImagen(this.src)" alt="Departamentos Sur Monterrey">
-    <div class="card-content">
-      <h3>Departamentos Sur Mty</h3>
-      <p>Desde $4 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20departamentos%20en%20Sur%20Monterrey" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="terrcar.png" onclick="abrirImagen(this.src)" alt="Terrenos Carretera Nacional">
-    <div class="card-content">
-      <h3>Terrenos Residenciales Carretera Nacional</h3>
-      <p>Desde $2.5 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Carretera%20Nacional" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="henar.jpeg" onclick="abrirImagen(this.src)" alt="Residencias Premium en Santiago">
-    <div class="card-content">
-      <h3>Residencias Premium en Santiago</h3>
-      <p>Desde $14 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20las%20residencias%20premium%20en%20Santiago" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="plano.png" onclick="abrirImagen(this.src)" alt="Terrenos Montemorelos">
-    <div class="card-content">
-      <h3>Terrenos Residencial-Campestre Montemorelos</h3>
-      <p>Desde $1.5 MDP*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20quiero%20información%20de%20los%20terrenos%20en%20Montemorelos" target="_blank">
-        Solicitar información
-      </a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="masroj.png" onclick="abrirImagen(this.src)" alt="Más opciones">
-    <div class="card-content">
-      <h3>Busco otra ubicación y/o presupuesto</h3>
-      <p>$*</p>
-      <a class="btn" href="https://wa.me/528116027856?text=Hola,%20busco%20otra%20ubicación%20y/o%20presupuesto" target="_blank">
-        Solicitar asesoría
-      </a>
-    </div>
-  </div>
-
-</section>
-
-<!-- BENEFICIOS -->
+<section class="grid" id="propiedades"></section>
 
 <section class="benefits">
-
   <h2>¿Por qué elegir RojAlm Asesores?</h2>
-
   <div class="benefits-grid">
-
     <div class="benefit-card">
       <h3>✔ Atención Personalizada</h3>
       <p>Te acompañamos en cada paso para encontrar la propiedad ideal.</p>
     </div>
-
     <div class="benefit-card">
       <h3>✔ Alta Plusvalía</h3>
       <p>Propiedades ubicadas en zonas con gran crecimiento y valor.</p>
     </div>
-
     <div class="benefit-card">
       <h3>✔ Asesoría Financiera</h3>
       <p>Te ayudamos con Infonavit, Cofinavit y crédito bancario.</p>
     </div>
-
   </div>
-
 </section>
 
-<!-- PRESENTACIÓN -->
-
 <section class="about-section">
-
   <div class="about-card">
-
     <h2>Conoce RojAlm Asesores</h2>
-
     <p>
       Somos una firma inmobiliaria enfocada en brindar atención personalizada,
       transparencia y acompañamiento profesional en cada etapa del proceso inmobiliario.
     </p>
-
     <button class="about-btn" type="button" onclick="abrirPresentacion()">
       Leer presentación completa
     </button>
-
   </div>
-
 </section>
 
-<!-- MODAL PRESENTACIÓN -->
-
 <div class="about-modal" id="aboutModal">
-
   <div class="about-content">
-
     <span class="close-about" onclick="cerrarPresentacion()">✕</span>
-
     <h2>RojAlm Asesores</h2>
 
     <p>En RojAlm Asesores somos una firma inmobiliaria liderada por Mike Rojas enfocada en brindar atención personalizada, transparencia y acompañamiento profesional en cada etapa del proceso inmobiliario.</p>
-
     <p>Nos especializamos en la venta, renta y promoción de propiedades residenciales en Nuevo León, ayudando a nuestros clientes a encontrar no solo una propiedad, sino el lugar ideal para construir su futuro.</p>
-
     <p>Nuestro compromiso es ofrecer un servicio cercano, confiable y eficiente, entendiendo las necesidades de cada cliente para convertir sus objetivos inmobiliarios en una experiencia segura y satisfactoria.</p>
 
     <h3>Nuestra Historia</h3>
-
     <p>RojAlm Asesores nace con la visión de crear una inmobiliaria diferente: más humana, más cercana y enfocada realmente en las personas.</p>
-
     <p>Lo que comenzó como un proyecto independiente con la intención de ayudar familias y compradores a encontrar su hogar ideal, se ha convertido en una agencia comprometida con ofrecer asesoría profesional y atención personalizada en cada operación.</p>
-
     <p>Con dedicación, honestidad y pasión por el sector inmobiliario, hemos logrado construir relaciones de confianza con nuestros clientes, acompañándolos en una de las decisiones más importantes de su vida: invertir en su patrimonio.</p>
-
     <p>Hoy seguimos creciendo, adaptándonos a las nuevas tendencias del mercado y utilizando herramientas digitales modernas para brindar una experiencia inmobiliaria más ágil, segura y profesional.</p>
 
     <h3>Nuestra Misión</h3>
-
     <p>Brindar asesoría inmobiliaria profesional y personalizada, ofreciendo soluciones confiables que ayuden a nuestros clientes a tomar decisiones seguras para proteger y hacer crecer su patrimonio.</p>
 
     <h3>Nuestra Visión</h3>
-
     <p>Ser una agencia inmobiliaria reconocida en Nuevo León por su confianza, profesionalismo y calidad de servicio, destacando por crear relaciones duraderas con nuestros clientes y por ofrecer experiencias inmobiliarias transparentes y eficientes.</p>
 
     <h3>Nuestros Valores</h3>
-
     <ul>
       <li><strong>Honestidad:</strong> Actuamos con transparencia y ética en cada operación inmobiliaria.</li>
       <li><strong>Compromiso:</strong> Nos involucramos en cada proceso como si fuera propio.</li>
@@ -1115,7 +460,6 @@ header img{
     </ul>
 
     <h3>¿Por Qué Elegirnos?</h3>
-
     <ul>
       <li>✔ Atención personalizada y cercana.</li>
       <li>✔ Asesoría profesional durante todo el proceso.</li>
@@ -1126,63 +470,38 @@ header img{
     </ul>
 
     <h3>Nuestro Compromiso</h3>
-
     <p>En RojAlm Asesores creemos que cada propiedad representa una historia, una meta y una inversión importante.</p>
-
     <p>Por eso trabajamos día con día para ofrecer un servicio inmobiliario profesional, humano y enfocado en generar tranquilidad y resultados para nuestros clientes.</p>
-
     <p><strong>Tu patrimonio merece una asesoría confiable.</strong></p>
-
   </div>
-
 </div>
 
-<!-- CTA -->
-
 <section class="catalogo">
-
   <h2>Ver más propiedades</h2>
-
   <p>Agenda hoy tu asesoría personalizada y encuentra la propiedad ideal para ti.</p>
-
   <a class="btn" href="https://wa.me/c/5218116027856" target="_blank">
     Ver catálogo completo
   </a>
-
 </section>
 
-<!-- AVISO DE PRIVACIDAD -->
-
 <section class="privacy-section">
-
   <div class="privacy-card">
-
     <h2>Aviso de Privacidad</h2>
-
     <p>
       En RojAlm Asesores protegemos la información de nuestros clientes y prospectos.
       Tus datos personales serán tratados de forma confidencial y utilizados únicamente
       para fines relacionados con servicios inmobiliarios.
     </p>
-
     <button class="privacy-btn" type="button" onclick="abrirAviso()">
       Leer aviso completo
     </button>
-
   </div>
-
 </section>
 
-<!-- MODAL AVISO -->
-
 <div class="privacy-modal" id="privacyModal">
-
   <div class="privacy-content">
-
     <span class="close-modal" onclick="cerrarAviso()">✕</span>
-
     <h2>Aviso de Privacidad</h2>
-
     <h3>RojAlm Asesores</h3>
 
     <p>
@@ -1223,7 +542,6 @@ header img{
 
     <h4>5. Compartición de información</h4>
     <p>Sus datos podrán ser compartidos únicamente cuando sea necesario para la operación inmobiliaria con:</p>
-
     <ul>
       <li>Instituciones bancarias</li>
       <li>Notarías públicas</li>
@@ -1250,44 +568,140 @@ header img{
       • Teléfono / WhatsApp: 81 1602 7856
     </p>
 
-    <p style="margin-top:30px;opacity:.7;">
-      Última actualización: Mayo 2025
-    </p>
-
+    <p style="margin-top:30px;opacity:.7;">Última actualización: Mayo 2025</p>
   </div>
-
 </div>
 
-<!-- FOOTER -->
-
-<footer style="
-padding:30px;
-text-align:center;
-color:#777;
-font-size:14px;
-border-top:1px solid rgba(255,255,255,.08);
-">
+<footer>
   © 2026 RojAlm Asesores | Tu patrimonio merece una asesoría confiable
 </footer>
 
-<!-- VISOR DE IMAGEN -->
-
 <div class="image-modal" id="imageModal">
-
   <span class="close-image" onclick="cerrarImagen()">✕</span>
-
   <img id="imagenGrande" alt="Imagen ampliada">
-
 </div>
 
 <script>
+const propiedades = [
+  {
+    nombre:"Casa en Guadalupe",
+    precio:"Desde $3 MDP*",
+    imagen:"casgpe.png",
+    alt:"Casa en Guadalupe",
+    mensaje:"Hola, quiero información de la casa en Guadalupe"
+  },
+  {
+    nombre:"Casa en Apodaca",
+    precio:"Desde $3.5 MDP*",
+    imagen:"casapo.png",
+    alt:"Casa en Apodaca",
+    mensaje:"Hola, quiero información de la casa en Apodaca"
+  },
+  {
+    nombre:"Casa en García",
+    precio:"Desde $2.4 MDP*",
+    imagen:"casgarT.png",
+    alt:"Casa en García",
+    mensaje:"Hola, quiero información de la casa en García"
+  },
+  {
+    nombre:"Casa en Cumbres",
+    precio:"Desde $7.5 MDP*",
+    imagen:"cascum.png",
+    alt:"Casa en Cumbres",
+    mensaje:"Hola, quiero información de la casa en Cumbres"
+  },
+  {
+    nombre:"Departamentos Sta. Catarina",
+    precio:"Desde $5 MDP*",
+    imagen:"depsta.png",
+    alt:"Departamentos Santa Catarina",
+    mensaje:"Hola, quiero información de los departamentos en Santa Catarina"
+  },
+  {
+    nombre:"Departamentos Sur Mty",
+    precio:"Desde $4 MDP*",
+    imagen:"depsur.jpg",
+    alt:"Departamentos Sur Monterrey",
+    mensaje:"Hola, quiero información de los departamentos en Sur Monterrey"
+  },
+  {
+    nombre:"Terrenos Residenciales Carretera Nacional",
+    precio:"Desde $2.5 MDP*",
+    imagen:"terrcar.png",
+    alt:"Terrenos Carretera Nacional",
+    mensaje:"Hola, quiero información de los terrenos en Carretera Nacional"
+  },
+  {
+    nombre:"Residencias Premium en Santiago",
+    precio:"Desde $14 MDP*",
+    imagen:"henar.jpeg",
+    alt:"Residencias Premium en Santiago",
+    mensaje:"Hola, quiero información de las residencias premium en Santiago"
+  },
+  {
+    nombre:"Terrenos Residencial-Campestre Montemorelos",
+    precio:"Desde $1.5 MDP*",
+    imagen:"plano.png",
+    alt:"Terrenos Montemorelos",
+    mensaje:"Hola, quiero información de los terrenos en Montemorelos"
+  },
+  {
+    nombre:"Casa en Santiago NL",
+    precio:"Desde $5.6 MDP*",
+    imagen:"sgocsa.png",
+    alt:"Casa en Santiago NL",
+    mensaje:"Hola, quiero información de la casa en Santiago NL"
+  },
+  {
+    nombre:"Busco otra ubicación y/o presupuesto",
+    precio:"$*",
+    imagen:"masroj.png",
+    alt:"Más opciones",
+    mensaje:"Hola, busco otra ubicación y/o presupuesto"
+  }
+];
 
 let currentSlide = 0;
-const totalSlides = 10;
+
+function crearLinkWhatsApp(mensaje){
+  return `https://wa.me/528116027856?text=${encodeURIComponent(mensaje)}`;
+}
+
+function renderizarPropiedades(){
+  const slides = document.getElementById("slides");
+  const grid = document.getElementById("propiedades");
+
+  slides.innerHTML = propiedades.map(propiedad => `
+    <div class="slide">
+      <img src="${propiedad.imagen}" onclick="abrirImagen(this.src)" alt="${propiedad.alt}">
+      <div class="slide-text">
+        <h2>${propiedad.nombre}</h2>
+        <p>${propiedad.precio}</p>
+        <a class="btn" href="${crearLinkWhatsApp(propiedad.mensaje)}" target="_blank">
+          Solicitar información
+        </a>
+      </div>
+    </div>
+  `).join("");
+
+  grid.innerHTML = propiedades.map(propiedad => `
+    <div class="card">
+      <img src="${propiedad.imagen}" onclick="abrirImagen(this.src)" alt="${propiedad.alt}">
+      <div class="card-content">
+        <h3>${propiedad.nombre}</h3>
+        <p>${propiedad.precio}</p>
+        <a class="btn" href="${crearLinkWhatsApp(propiedad.mensaje)}" target="_blank">
+          Solicitar información
+        </a>
+      </div>
+    </div>
+  `).join("");
+}
 
 function moverSlide(direction){
-
   const slides = document.getElementById("slides");
+  const totalSlides = propiedades.length;
 
   currentSlide += direction;
 
@@ -1299,28 +713,23 @@ function moverSlide(direction){
     currentSlide = 0;
   }
 
-  slides.style.transform = `translateX(-${currentSlide * 10}%)`;
-
+  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
 function abrirImagen(src){
-
   const modal = document.getElementById("imageModal");
   const imagen = document.getElementById("imagenGrande");
 
   imagen.src = src;
   modal.style.display = "flex";
-
 }
 
 function cerrarImagen(){
-
   const modal = document.getElementById("imageModal");
   const imagen = document.getElementById("imagenGrande");
 
   modal.style.display = "none";
   imagen.src = "";
-
 }
 
 function abrirAviso(){
@@ -1340,7 +749,6 @@ function cerrarPresentacion(){
 }
 
 window.addEventListener("click", function(event){
-
   const privacyModal = document.getElementById("privacyModal");
   const aboutModal = document.getElementById("aboutModal");
   const imageModal = document.getElementById("imageModal");
@@ -1356,9 +764,9 @@ window.addEventListener("click", function(event){
   if(event.target === imageModal){
     cerrarImagen();
   }
-
 });
 
+renderizarPropiedades();
 </script>
 
 </body>
