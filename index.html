@@ -1,3 +1,5 @@
+Claro. Aquí va el código completo con la corrección: cuando abras una foto y presiones Atrás en celular, se cerrará la imagen y te regresará al carrusel en vez de sacarte de la página.
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +12,6 @@
   --rojo:#b3001b;
   --rojo2:#7f0013;
   --negro:#070707;
-  --panel:rgba(255,255,255,.07);
   --borde:rgba(255,255,255,.12);
   --gris:#d9d9d9;
   --gris2:#9f9f9f;
@@ -1441,6 +1442,7 @@ const propiedades = [
 ];
 
 let currentSlide = 0;
+let imagenAbiertaConHistorial = false;
 
 function crearLinkWhatsApp(mensaje){
   return `https://wa.me/528116027856?text=${encodeURIComponent(mensaje)}`;
@@ -1499,15 +1501,38 @@ function abrirImagen(src){
 
   imagen.src = src;
   modal.style.display = "flex";
+
+  if(!history.state || history.state.modal !== "imagen"){
+    imagenAbiertaConHistorial = true;
+    history.pushState({modal:"imagen"}, "", window.location.href);
+  }
 }
 
-function cerrarImagen(){
+function cerrarImagenDirecto(){
   const modal = document.getElementById("imageModal");
   const imagen = document.getElementById("imagenGrande");
 
   modal.style.display = "none";
   imagen.src = "";
+  imagenAbiertaConHistorial = false;
 }
+
+function cerrarImagen(){
+  if(imagenAbiertaConHistorial && history.state && history.state.modal === "imagen"){
+    history.back();
+    return;
+  }
+
+  cerrarImagenDirecto();
+}
+
+window.addEventListener("popstate", function(){
+  const imageModal = document.getElementById("imageModal");
+
+  if(imageModal.style.display === "flex"){
+    cerrarImagenDirecto();
+  }
+});
 
 function abrirAviso(){
   document.getElementById("privacyModal").style.display = "block";
